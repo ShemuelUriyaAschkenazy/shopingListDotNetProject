@@ -29,7 +29,8 @@
     <DockPanel>
 
         <userControls:topMenu  DockPanel.Dock="Top" Height="100"/>
-        <userControls:addDataLeftMenuUC  DockPanel.Dock="Left"  Width="100"/>
+        <userControls:addDataLeftMenuUC  DockPanel.Dock="Left"  Width="130
+                                         "/>
         <Grid ></Grid>
     </DockPanel>
 </Window>
