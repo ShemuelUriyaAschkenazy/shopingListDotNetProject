@@ -1,0 +1,12 @@
+D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\DAL\bin\Debug\netstandard2.0\DAL.deps.json
+D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\DAL\bin\Debug\netstandard2.0\DAL.dll
+D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\DAL\bin\Debug\netstandard2.0\DAL.pdb
+D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\DAL\bin\Debug\netstandard2.0\BE.dll
+D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\DAL\bin\Debug\netstandard2.0\BE.pdb
+D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\DAL\obj\Debug\netstandard2.0\DAL.csprojAssemblyReference.cache
+D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\DAL\obj\Debug\netstandard2.0\DAL.csproj.CoreCompileInputs.cache
+D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfoInputs.cache
+D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfo.cs
+D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\DAL\obj\Debug\netstandard2.0\DAL.csproj.CopyComplete
+D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\DAL\obj\Debug\netstandard2.0\DAL.dll
+D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\DAL\obj\Debug\netstandard2.0\DAL.pdb

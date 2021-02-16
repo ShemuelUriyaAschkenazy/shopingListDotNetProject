@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="PL.userControls.topMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PL.userControls"
+             mc:Ignorable="d" d:DesignWidth="800" Height="137.844"
+             Background="AliceBlue">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="המלצות קנייה ליום" Grid.Column="0" VerticalAlignment="Center" Width="100" Height="50"/>
+        <Button Content="צפייה וניתוח נתונים" Grid.Column="1" VerticalAlignment="Center" Width="100" Height="50"/>
+        <Button Content="הוסף נתונים" Grid.Column="2" VerticalAlignment="Center" Width="100" Height="50"/>
+
+
+    </Grid>
+</UserControl>
