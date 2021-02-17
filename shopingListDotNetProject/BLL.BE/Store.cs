@@ -4,8 +4,14 @@ using System.Text;
 
 namespace BE
 {
-    class Store
+    public class Store
     {
+        public Store(int storeId, string storeName)
+        {
+            this.storeId = storeId;
+            this.storeName = storeName;
+        }
+
         int storeId { get; set; }
         string storeName { get; set; }
     }

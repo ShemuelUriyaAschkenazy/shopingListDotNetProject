@@ -27,3 +27,5 @@ D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\WpfApp1\bin\
 D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\WpfApp1\bin\Debug\MaterialDesignThemes.Wpf.pdb
 D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\WpfApp1\bin\Debug\MaterialDesignThemes.Wpf.xml
 D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\WpfApp1\obj\Debug\App.baml
+D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\WpfApp1\obj\Debug\userControls\recentBuyingsList.g.cs
+D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\WpfApp1\obj\Debug\userControls\recentBuyingsList.baml

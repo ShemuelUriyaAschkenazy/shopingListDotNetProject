@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BE;
+using PL.viewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,19 @@ namespace PL
     /// </summary>
     public partial class MainWindow : Window
     {
+        private taskManager taskManager;
+        public IVM<Buying> VM { get; set; }
         public MainWindow()
         {
             InitializeComponent();
+            //initialize VM
+            taskManager = new taskManager(this);
+            this.DataContext = VM;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(VM.coll[0].PricePerOneProduct.ToString());
         }
     }
 }

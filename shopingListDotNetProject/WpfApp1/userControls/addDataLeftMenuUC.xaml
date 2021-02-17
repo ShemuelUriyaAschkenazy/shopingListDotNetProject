@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PL.userControls"
              mc:Ignorable="d" 
-             d:DesignHeight="450" Width="123.177">
+             d:DesignHeight="450" Width="123.177"
+             Background="AliceBlue">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="10"/>
@@ -14,7 +15,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Button Content="ייבא נתונים"  Grid.Row="1" />
+        <Button Content="ייבא נתונים"  Grid.Row="1" Click="ImportButton_Click" />
         <Button Content="עריכה והוספה"  Grid.Row="2"/>
         
     </Grid>

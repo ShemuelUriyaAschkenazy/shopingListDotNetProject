@@ -1,6 +1,4 @@
-﻿using BE;
-using PL.viewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,20 +16,13 @@ using System.Windows.Shapes;
 namespace PL.userControls
 {
     /// <summary>
-    /// Interaction logic for addDataLeftMenuUC.xaml
+    /// Interaction logic for recentBuyingsList.xaml
     /// </summary>
-    public partial class addDataLeftMenuUC : UserControl
+    public partial class recentBuyingUC : UserControl
     {
-        public event Action ImportDataEvent;
-        public addDataLeftMenuUC()
+        public recentBuyingUC()
         {
             InitializeComponent();
-        }
-
-        private void ImportButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (ImportDataEvent != null)
-                ImportDataEvent();
         }
     }
 }

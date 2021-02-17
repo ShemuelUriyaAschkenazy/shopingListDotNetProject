@@ -6,7 +6,13 @@ namespace BE
 {
     public class User
     {
-        int userId;
-        string username;
+        int userId { get; set; }
+        string username { get; set; }
+
+        public User(int userId, string username)
+        {
+            this.userId = userId;
+            this.username = username;
+        }
     }
 }

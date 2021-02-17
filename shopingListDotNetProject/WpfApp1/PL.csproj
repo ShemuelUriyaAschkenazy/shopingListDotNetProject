@@ -63,13 +63,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="models\recentBuyingModel.cs" />
+    <Compile Include="taskManager.cs" />
     <Compile Include="userControls\addDataLeftMenuUC.xaml.cs">
       <DependentUpon>addDataLeftMenuUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="userControls\recentBuyingsList.xaml.cs">
+      <DependentUpon>recentBuyingsList.xaml</DependentUpon>
     </Compile>
     <Compile Include="userControls\topMenu.xaml.cs">
       <DependentUpon>topMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="viewModels\addDataVM.cs" />
+    <Compile Include="viewModels\generalVM.cs" />
+    <Compile Include="viewModels\IVM.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -83,6 +89,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="userControls\addDataLeftMenuUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="userControls\recentBuyingsList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -124,9 +134,7 @@
       <Name>BE</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -13,9 +13,9 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Button Content="המלצות קנייה ליום" Grid.Column="0" VerticalAlignment="Center" Width="100" Height="50"/>
-        <Button Content="צפייה וניתוח נתונים" Grid.Column="1" VerticalAlignment="Center" Width="100" Height="50"/>
-        <Button Content="הוסף נתונים" Grid.Column="2" VerticalAlignment="Center" Width="100" Height="50"/>
+        <Button Content="המלצות קנייה ליום" Grid.Column="0" VerticalAlignment="Center" Height="50"/>
+        <Button Content="צפייה וניתוח נתונים" Grid.Column="1" VerticalAlignment="Center"  Height="50"/>
+        <Button Content="הוסף נתונים" Grid.Column="2" VerticalAlignment="Center"  Height="50"/>
 
 
     </Grid>

@@ -1,12 +1,20 @@
 ﻿using System;
 
-namespace BLL.BE
+namespace BE
 {
     public class Product
     {
+        public Product(int productId, string productName, Categoty categoty)
+        {
+            this.productId = productId;
+            this.productName = productName;
+            this.categoty = categoty;
+        }
+
         int productId { get; set; }
-        int productName { get; set; }
-        
+        string productName { get; set; }
+        Categoty categoty { get; set; }
+
 
     }
 }

@@ -28,9 +28,15 @@
     </Window.Resources>
     <DockPanel>
 
-        <userControls:topMenu  DockPanel.Dock="Top" Height="100"/>
-        <userControls:addDataLeftMenuUC  DockPanel.Dock="Left"  Width="130
-                                         "/>
-        <Grid ></Grid>
+        <userControls:topMenu x:Name="TopMenu" DockPanel.Dock="Top" Height="100"/>
+        <userControls:addDataLeftMenuUC x:Name="AddDataMenu"  DockPanel.Dock="Left"  Width="130"/>
+        <Grid x:Name="centerOfPageGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="603*"/>
+                <ColumnDefinition Width="61*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Click="Button_Click"
+                    ></Button>
+        </Grid>
     </DockPanel>
 </Window>
