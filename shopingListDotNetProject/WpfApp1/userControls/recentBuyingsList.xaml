@@ -7,9 +7,18 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <DataGrid Name="recentBuyingsDataGrid" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="440" Margin="10,0,0,0" VerticalAlignment="Top" Width="790">
+        <DataGrid Name="recentBuyingsDataGrid" ItemsSource="{Binding}" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="440" Margin="10,0,0,0" VerticalAlignment="Top" Width="790">
             <DataGrid.Columns>
+    
+                <DataGridTextColumn Header="Product" Binding="{Binding Product}"/>
+                <DataGridTextColumn Header="Amount" Binding="{Binding Amount}"/>
+                <DataGridComboBoxColumn x:Name="StoreColumn" Header="Store" DisplayMemberPath="StoreName" SelectedItemBinding="{Binding Store}" ItemsSource="{Binding storelist}" >
 
+                </DataGridComboBoxColumn>
+                <DataGridComboBoxColumn x:Name="UserColumn" Header="User" DisplayMemberPath="Username" SelectedItemBinding="{Binding User}" ItemsSource="{Binding}" >
+
+                </DataGridComboBoxColumn>
+                <DataGridTextColumn Header="Amount" Binding="{Binding Amount}"/>
                 <DataGridTextColumn Header="Price" Binding="{Binding PricePerOneProduct}"/>
                 <DataGridTextColumn Header="Amount" Binding="{Binding Amount}"/>
 

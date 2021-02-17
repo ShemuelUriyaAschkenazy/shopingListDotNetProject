@@ -8,11 +8,11 @@ namespace BE
     {
         public Store(int storeId, string storeName)
         {
-            this.storeId = storeId;
-            this.storeName = storeName;
+            this.StoreId = storeId;
+            this.StoreName = storeName;
         }
 
-        int storeId { get; set; }
-        string storeName { get; set; }
+        public int StoreId { get; set; }
+        public string StoreName { get; set; }
     }
 }

@@ -32,9 +32,5 @@ namespace PL
             this.DataContext = VM;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show(VM.coll[0].PricePerOneProduct.ToString());
-        }
     }
 }

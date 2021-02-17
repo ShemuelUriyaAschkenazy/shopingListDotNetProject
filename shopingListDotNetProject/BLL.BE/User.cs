@@ -6,13 +6,13 @@ namespace BE
 {
     public class User
     {
-        int userId { get; set; }
-        string username { get; set; }
+        public int UserId  { get; set; }
+        public string Username { get; set; }
 
         public User(int userId, string username)
         {
-            this.userId = userId;
-            this.username = username;
+            this.UserId = userId;
+            this.Username = username;
         }
     }
 }

@@ -30,13 +30,15 @@
 
         <userControls:topMenu x:Name="TopMenu" DockPanel.Dock="Top" Height="100"/>
         <userControls:addDataLeftMenuUC x:Name="AddDataMenu"  DockPanel.Dock="Left"  Width="130"/>
-        <Grid x:Name="centerOfPageGrid">
+        <Grid x:Name="centerOfPageGrid" Margin="0,0,0,-0.333" Width="646">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="62*"/>
+                <RowDefinition Height="259*"/>
+            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="603*"/>
-                <ColumnDefinition Width="61*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="1" Click="Button_Click"
-                    ></Button>
+           
         </Grid>
     </DockPanel>
 </Window>
