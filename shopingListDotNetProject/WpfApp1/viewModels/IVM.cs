@@ -1,10 +1,14 @@
-﻿using System.Collections.ObjectModel;
+﻿using BE;
+using System.Collections.ObjectModel;
 using System.Windows.Documents;
 
 namespace PL.viewModels
 {
-    public class IVM<T>
+    public class IVM
     {
-        public ObservableCollection<T> coll;
+        public ObservableCollection<Buying> buyingList;
+        public ObservableCollection<User> userlist;
+        public ObservableCollection<Store> storelist;
+        public ObservableCollection<Product> productlist;
     }
 }

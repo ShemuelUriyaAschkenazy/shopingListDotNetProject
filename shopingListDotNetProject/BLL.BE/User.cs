@@ -14,5 +14,13 @@ namespace BE
             this.UserId = userId;
             this.Username = username;
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is User user &&
+                   UserId == user.UserId &&
+                   Username == user.Username;
+        }
     }
+
 }

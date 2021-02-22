@@ -23,6 +23,8 @@ namespace PL.userControls
     public partial class addDataLeftMenuUC : UserControl
     {
         public event Action ImportDataEvent;
+        public event Action AddValuesEvent;
+
         public addDataLeftMenuUC()
         {
             InitializeComponent();
@@ -32,6 +34,12 @@ namespace PL.userControls
         {
             if (ImportDataEvent != null)
                 ImportDataEvent();
+        }
+
+        private void AddValues_Click(object sender, RoutedEventArgs e)
+        {
+            if (AddValuesEvent != null)
+                AddValuesEvent();
         }
     }
 }

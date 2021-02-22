@@ -11,8 +11,10 @@ namespace PL
     {
         public taskManager(MainWindow main)
         {
-            main.VM = new generalVM(main);
+            main.GeneralVM = new generalVM(main);
         }
+
+        
 
 
     }

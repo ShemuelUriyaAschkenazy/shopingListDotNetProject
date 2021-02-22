@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "5IU1yjCw7l9611Qyg+Cw/wCrXkRu3PWHXBgyNlALnQ/HwcLWH3dmcTh6nIKOxhnBkfkpZQCQ3xOsFUqhqoISbA==",
+  "dgSpecHash": "CEpmdu8/DfoiIdi8wSWNNZS2521jFsJmNabpRTvRGjGViu3jRyZCgEBunvjuYx+l00agsz3jIAGkvER+jaPbrw==",
   "success": true,
   "projectFilePath": "D:\\desktopSystemsEngineeringCourse\\project\\shopingListDotNetProject\\BLL\\BLL.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\uriya\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],

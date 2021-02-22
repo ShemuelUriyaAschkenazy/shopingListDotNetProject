@@ -14,5 +14,12 @@ namespace BE
 
         public int StoreId { get; set; }
         public string StoreName { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Store store &&
+                   StoreId == store.StoreId &&
+                   StoreName == store.StoreName;
+        }
     }
 }

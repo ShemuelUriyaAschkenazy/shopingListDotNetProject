@@ -23,14 +23,18 @@ namespace PL
     public partial class MainWindow : Window
     {
         private taskManager taskManager;
-        public IVM<Buying> VM { get; set; }
+        public IVM GeneralVM { get; set; }
+        public IVM CurrentVM { get; set; }
         public MainWindow()
         {
             InitializeComponent();
             //initialize VM
             taskManager = new taskManager(this);
-            this.DataContext = VM;
+            this.DataContext = GeneralVM;
         }
 
+        
+
     }
+
 }

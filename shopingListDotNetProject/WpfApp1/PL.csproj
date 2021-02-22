@@ -44,6 +44,7 @@
       <HintPath>..\packages\MaterialDesignThemes.4.0.0\lib\net452\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,17 +64,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="commands\AddCategoryAction.cs" />
+    <Compile Include="commands\SaveAction.cs" />
+    <Compile Include="converters\ValuesToCategoryConverter.cs" />
     <Compile Include="models\recentBuyingModel.cs" />
     <Compile Include="taskManager.cs" />
     <Compile Include="userControls\addDataLeftMenuUC.xaml.cs">
       <DependentUpon>addDataLeftMenuUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="userControls\recentBuyingsList.xaml.cs">
-      <DependentUpon>recentBuyingsList.xaml</DependentUpon>
+    <Compile Include="userControls\AddValuesUC.xaml.cs">
+      <DependentUpon>AddValuesUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="userControls\recentBuyingUC.xaml.cs">
+      <DependentUpon>recentBuyingUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="userControls\topMenu.xaml.cs">
       <DependentUpon>topMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="viewModels\AddValuesVM.cs" />
     <Compile Include="viewModels\generalVM.cs" />
     <Compile Include="viewModels\IVM.cs" />
     <Page Include="MainWindow.xaml">
@@ -92,7 +100,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="userControls\recentBuyingsList.xaml">
+    <Page Include="userControls\AddValuesUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="userControls\recentBuyingUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -132,6 +144,10 @@
     <ProjectReference Include="..\BLL.BE\BE.csproj">
       <Project>{a3c28a21-0ed1-4ba6-8cd9-6af991074f78}</Project>
       <Name>BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{8bcbb3d9-eee2-47fa-8cd5-a33334a21e7b}</Project>
+      <Name>BLL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

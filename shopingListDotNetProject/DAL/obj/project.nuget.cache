@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "VvGqcl7xdmuafs3rb2l4K4GP0Rc4avH1DkRThNwhKFK47uzTvS4PBsiP5WfL/OBwKDnmTH8PPK9D2UXMz+X17g==",
+  "dgSpecHash": "o9vu+lOHEOSzCDkppfs+DbGZD6qdlAI5zCV6AS2I6mLWQFjPLY59GQddV6knzZYfb+j2HnebB9FNKXmqF6d6vg==",
   "success": true,
   "projectFilePath": "D:\\desktopSystemsEngineeringCourse\\project\\shopingListDotNetProject\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\uriya\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],

@@ -2,8 +2,8 @@ D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\BLL.BE\bin\D
 D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\BLL.BE\bin\Debug\netstandard2.0\BE.dll
 D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\BLL.BE\bin\Debug\netstandard2.0\BE.pdb
 D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\BLL.BE\obj\Debug\netstandard2.0\BE.csprojAssemblyReference.cache
-D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\BLL.BE\obj\Debug\netstandard2.0\BE.csproj.CoreCompileInputs.cache
 D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\BLL.BE\obj\Debug\netstandard2.0\BE.AssemblyInfoInputs.cache
 D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\BLL.BE\obj\Debug\netstandard2.0\BE.AssemblyInfo.cs
 D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\BLL.BE\obj\Debug\netstandard2.0\BE.dll
 D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\BLL.BE\obj\Debug\netstandard2.0\BE.pdb
+D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\BLL.BE\obj\Debug\netstandard2.0\BE.csproj.CoreCompileInputs.cache

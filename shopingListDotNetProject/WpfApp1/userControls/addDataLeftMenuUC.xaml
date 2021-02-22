@@ -16,7 +16,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Button Content="ייבא נתונים"  Grid.Row="1" Click="ImportButton_Click" />
-        <Button Content="עריכה והוספה"  Grid.Row="2"/>
+        <Button Name="AddValues" Content="הוספת ערכים"  Grid.Row="2" Click="AddValues_Click"/>
         
     </Grid>
 </UserControl>
