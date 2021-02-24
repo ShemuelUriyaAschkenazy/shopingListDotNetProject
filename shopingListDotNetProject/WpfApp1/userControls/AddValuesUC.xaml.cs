@@ -18,9 +18,9 @@ namespace PL.userControls
     /// <summary>
     /// Interaction logic for AddNewUC.xaml
     /// </summary>
-    public partial class AddNewUC : UserControl
+    public partial class AddValuesUC : UserControl
     {
-        public AddNewUC()
+        public AddValuesUC()
         {
             InitializeComponent();
         }

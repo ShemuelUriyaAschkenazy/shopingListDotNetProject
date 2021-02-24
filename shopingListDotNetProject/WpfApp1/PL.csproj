@@ -64,9 +64,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="commands\AddBuyingAction.cs" />
     <Compile Include="commands\AddCategoryAction.cs" />
+    <Compile Include="commands\AddProductAction.cs" />
+    <Compile Include="commands\AddStoreAction.cs" />
+    <Compile Include="commands\AddUserAction.cs" />
     <Compile Include="commands\SaveAction.cs" />
-    <Compile Include="converters\ValuesToCategoryConverter.cs" />
+    <Compile Include="converters\StringToUserConverter.cs" />
+    <Compile Include="converters\StringToStoreConverter.cs" />
+    <Compile Include="converters\StringToCategoryConverter.cs" />
+    <Compile Include="converters\ValuesToProductConverter.cs" />
+    <Compile Include="ExtensionMethod.cs" />
     <Compile Include="models\recentBuyingModel.cs" />
     <Compile Include="taskManager.cs" />
     <Compile Include="userControls\addDataLeftMenuUC.xaml.cs">
@@ -75,15 +83,16 @@
     <Compile Include="userControls\AddValuesUC.xaml.cs">
       <DependentUpon>AddValuesUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="userControls\recentBuyingUC.xaml.cs">
-      <DependentUpon>recentBuyingUC.xaml</DependentUpon>
+    <Compile Include="userControls\RecentBuyingUC.xaml.cs">
+      <DependentUpon>RecentBuyingUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="userControls\topMenu.xaml.cs">
       <DependentUpon>topMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="viewModels\AddValuesVM.cs" />
-    <Compile Include="viewModels\generalVM.cs" />
+    <Compile Include="viewModels\GeneralVM.cs" />
     <Compile Include="viewModels\IVM.cs" />
+    <Compile Include="viewModels\RecentBuyingVM.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -104,7 +113,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="userControls\recentBuyingUC.xaml">
+    <Page Include="userControls\RecentBuyingUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

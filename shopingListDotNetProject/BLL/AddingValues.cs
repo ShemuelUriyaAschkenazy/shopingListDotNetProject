@@ -5,11 +5,11 @@ using System.Reflection;
 
 namespace BLL
 {
-    public class AddingValues
+    public class BLAddingVal
     {
         private DbAdapter dbAdapter;
 
-        public AddingValues()
+        public BLAddingVal()
         {
             dbAdapter = new DbAdapter();
         }
@@ -20,10 +20,34 @@ namespace BLL
             dbAdapter.Save(category);
         }
 
-        public void AddCategoty(Category obj)
+        public Category Add(Category obj)
         {
-            dbAdapter.AddCategory(obj);
-                
+            obj.CategoryId = dbAdapter.GetMaxCategoryId() + 1;
+            return dbAdapter.Add(obj);
+        }
+
+        public Product Add(Product obj)
+        {
+            obj.ProductId = dbAdapter.GetMaxProductId() + 1;
+            return dbAdapter.Add(obj);
+        }
+
+        public User Add(User obj)
+        {
+            obj.UserId = dbAdapter.GetMaxUserId() + 1;
+            return dbAdapter.Add(obj);
+        }
+
+        public Store Add(Store obj)
+        {
+            obj.StoreId = dbAdapter.GetMaxStoreId() + 1;
+            return dbAdapter.Add(obj);
+        }
+
+        public Buying Add(Buying obj)
+        {
+            obj.BuyingId = dbAdapter.GetMaxBuyingId() + 1;
+            return dbAdapter.Add(obj);
         }
     }
 }

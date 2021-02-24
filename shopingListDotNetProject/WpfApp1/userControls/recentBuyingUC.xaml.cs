@@ -18,14 +18,14 @@ namespace PL.userControls
     /// <summary>
     /// Interaction logic for recentBuyingsList.xaml
     /// </summary>
-    public partial class recentBuyingUC : UserControl
+    public partial class RecentBuyingUC : UserControl
     {
-        public recentBuyingUC()
+        public RecentBuyingUC()
         {
             InitializeComponent();
         }
 
-        private void addData_Click(object sender, RoutedEventArgs e)
+        private void AddData_Click(object sender, RoutedEventArgs e)
         {
 
         }

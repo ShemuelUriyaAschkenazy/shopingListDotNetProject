@@ -15,9 +15,7 @@
      TextOptions.TextRenderingMode="Auto"
      Background="{DynamicResource MaterialDesignPaper}"
      FontFamily="{DynamicResource MaterialDesignFont}">
-    <Window.Resources>
-        <local:ValuesToCategoryConverter x:Key="CategoryConverter"></local:ValuesToCategoryConverter>
-    </Window.Resources>
+   
     <DockPanel>
 
         <userControls:topMenu x:Name="TopMenu" DockPanel.Dock="Top" Height="100"/>

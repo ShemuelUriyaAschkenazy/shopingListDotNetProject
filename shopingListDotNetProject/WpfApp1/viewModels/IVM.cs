@@ -6,9 +6,10 @@ namespace PL.viewModels
 {
     public class IVM
     {
-        public ObservableCollection<Buying> buyingList;
-        public ObservableCollection<User> userlist;
-        public ObservableCollection<Store> storelist;
-        public ObservableCollection<Product> productlist;
+        public ObservableCollection<Buying> buyinglist { get; set; }
+        public ObservableCollection<User> userlist { get; set; }
+        public ObservableCollection<Store> storelist { get; set; }
+        public ObservableCollection<Product> productlist { get; set; }
+        public ObservableCollection<Category> categorylist { get; set; }
     }
 }

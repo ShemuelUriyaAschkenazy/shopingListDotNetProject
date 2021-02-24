@@ -5,23 +5,34 @@ namespace BE
 {
     public class Product
     {
-        public Product(int productId, string productName, Category categoty)
+        public Product()
         {
-            this.ProductId = productId;
-            this.ProductName = productName;
-            this.Categoty = categoty;
         }
 
+        public Product(string productName, int categotyId)
+        {
+            ProductName = productName;
+            CategotyId = categotyId;
+        }
+
+        public Product(int productId, string productName, int categotyId)
+        {
+            ProductId = productId;
+            ProductName = productName;
+            CategotyId = categotyId;
+        }
+
+        public int Id { get; set; }
         public int ProductId { get; set; }
         public string ProductName { get; set; }
-        public Category Categoty { get; set; }
+        public int CategotyId { get; set; }
 
         public override bool Equals(object obj)
         {
             return obj is Product product &&
                    ProductId == product.ProductId &&
                    ProductName == product.ProductName &&
-                   EqualityComparer<Category>.Default.Equals(Categoty, product.Categoty);
+                   CategotyId == product.CategotyId;
         }
     }
 }

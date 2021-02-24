@@ -10,21 +10,26 @@ namespace BE
         {
         }
 
-        public Category(int categoryId, string categoryName)
+        public Category(string categoryName)
         {
-            this.categoryId = categoryId;
-            this.categoryName = categoryName;
+            CategoryName = categoryName;
         }
 
-        public int id { get; set; }
-        public int categoryId { get; set; }
-        public string categoryName { get; set; }
+        public Category(int categoryId, string categoryName)
+        {
+            this.CategoryId = categoryId;
+            this.CategoryName = categoryName;
+        }
+
+        public int Id { get; set; }
+        public int CategoryId { get; set; }
+        public string CategoryName { get; set; }
 
         public override bool Equals(object obj)
         {
             return obj is Category categoty &&
-                   categoryId == categoty.categoryId &&
-                   categoryName == categoty.categoryName;
+                   CategoryId == categoty.CategoryId &&
+                   CategoryName == categoty.CategoryName;
         }
     }
 }

@@ -9,12 +9,14 @@ using System.Windows.Data;
 
 namespace PL.converters
 {
-    public class ValuesToCategoryConverter : IMultiValueConverter
+    public class ValuesToProductConverter : IMultiValueConverter
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            if (values[0].ToString() != "" && values[1].ToString() != "")
-            return new Category(int.Parse(values[0].ToString()), values[1].ToString());
+            if (values[0].ToString()!="" && values[1] != null)
+            {
+                return new Product(values[0].ToString(), int.Parse(values[1].ToString())); 
+            }
             return null;
         }
 

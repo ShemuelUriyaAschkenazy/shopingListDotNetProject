@@ -6,29 +6,39 @@ namespace BE
 {
     public class Buying
     {
-        public Buying(Store store, Product product, int pricePerOneProduct, DateTime date)
+        public Buying()
         {
-            this.Store = store;
-            this.Product = product;
-            this.PricePerOneProduct = pricePerOneProduct;
-            this.Date = date;
+        }
+        public Buying(int buyingId, int storeId, int productId, int pricePerOneProduct, int amount, int userId, DateTime date)
+        {
+            BuyingId = buyingId;
+            StoreId = storeId;
+            ProductId = productId;
+            PricePerOneProduct = pricePerOneProduct;
+            Amount = amount;
+            UserId = userId;
+            Date = date;
         }
 
-        public Store Store { get; set; }
-        public Product Product { get; set; }
+        public int Id { get; set; }
+        public int BuyingId { get; set; }
+        public int StoreId { get; set; }
+        public int ProductId { get; set; }
         public int PricePerOneProduct { get; set; }
         public int Amount { get; set; }
-        public User User { get; set; }
+        public int UserId { get; set; }
         public DateTime Date { get; set; }
 
         public override bool Equals(object obj)
         {
             return obj is Buying buying &&
-                   EqualityComparer<Store>.Default.Equals(Store, buying.Store) &&
-                   EqualityComparer<Product>.Default.Equals(Product, buying.Product) &&
+                   Id == buying.Id &&
+                   BuyingId == buying.BuyingId &&
+                   StoreId == buying.StoreId &&
+                   ProductId == buying.ProductId &&
                    PricePerOneProduct == buying.PricePerOneProduct &&
                    Amount == buying.Amount &&
-                   EqualityComparer<User>.Default.Equals(User, buying.User) &&
+                   UserId == buying.UserId &&
                    Date == buying.Date;
         }
     }

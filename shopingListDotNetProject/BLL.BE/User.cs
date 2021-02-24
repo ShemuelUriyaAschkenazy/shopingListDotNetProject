@@ -6,6 +6,10 @@ namespace BE
 {
     public class User
     {
+        public User()
+        {
+        }
+        public int Id { get; set; }
         public int UserId  { get; set; }
         public string Username { get; set; }
 
@@ -13,6 +17,11 @@ namespace BE
         {
             this.UserId = userId;
             this.Username = username;
+        }
+
+        public User(string username)
+        {
+            Username = username;
         }
 
         public override bool Equals(object obj)
