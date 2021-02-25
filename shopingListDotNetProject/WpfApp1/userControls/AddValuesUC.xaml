@@ -12,13 +12,16 @@
 
         <local:StringToStoreConverter x:Key="StoreConverter"></local:StringToStoreConverter>
         <local:StringToUserConverter x:Key="UserConverter"></local:StringToUserConverter>
+        <local:ValuesToBuyingConverter x:Key="BuyingConverter"></local:ValuesToBuyingConverter>
 
+        
     </UserControl.Resources>
-    <Grid>
+    <ScrollViewer HorizontalScrollBarVisibility="Auto">
+    <Grid Height="482">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2.2*"/>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="1.5*"/>
@@ -26,9 +29,10 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2.5*"/>
+            <RowDefinition Height="0.2*"/>
 
         </Grid.RowDefinitions>
         <Label Content="קטגוריה חדשה" HorizontalAlignment="Center" Grid.Column="5" VerticalAlignment="Center"/>
@@ -77,5 +81,41 @@
         </StackPanel>
         <Button Content="הוסף משתמש" Grid.Row="3" Grid.Column="2" Command="{Binding AddUserAction}" CommandParameter="{Binding ElementName=UserNameTB, Path=Text, Converter={StaticResource UserConverter}}" />
 
+
+        <Label Grid.Row="4" Content="קנייה חדשה" HorizontalAlignment="Center" Grid.Column="5" />
+        <StackPanel Grid.Row="4" Grid.Column="4" VerticalAlignment="Center">
+            <Label Content="מוצר"></Label>
+            <Label Content="חנות"></Label>
+                <Label Content="שם משתמש"></Label>
+                <Label Content="מחיר"></Label>
+                <Label Content="כמות"></Label>
+                <Label Content="תאריך קנייה"></Label>
+            </StackPanel>
+        <StackPanel Grid.Row="4" Grid.Column="3" VerticalAlignment="Center">
+            <ComboBox Name="ProductCB"  Height="23" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="120" ItemsSource="{Binding productlist}" SelectedValuePath="ProductId" DisplayMemberPath="ProductName"/>
+            <ComboBox Name="StoreCB"  Height="23" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="120" ItemsSource="{Binding storelist}" SelectedValuePath="StoreId" DisplayMemberPath="StoreName"/>
+                <ComboBox Name="UserCB"  Height="23" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="120" ItemsSource="{Binding userlist}" SelectedValuePath="UserId" DisplayMemberPath="UserName"/>
+            <TextBox Name="PriceTB"  Height="23" HorizontalAlignment="Center"  VerticalAlignment="Center" TextWrapping="Wrap"  Width="120" />
+            <TextBox Name="AmountTB"  Height="23" HorizontalAlignment="Center"  VerticalAlignment="Center" TextWrapping="Wrap"  Width="120" />
+            <DatePicker x:Name="BuyingDateDatePicker" Width="120"></DatePicker>
+        </StackPanel>
+        <Button Content="הוסף קנייה" Grid.Row="4" Grid.Column="2" Command="{Binding AddBuyingAction}"  >
+            <Button.CommandParameter>
+                <MultiBinding Converter="{StaticResource BuyingConverter}">
+                        <Binding ElementName="ProductCB" Path="SelectedValue" Mode="OneWay" />
+                        <Binding ElementName="StoreCB" Path="SelectedValue" Mode="OneWay"  />
+                        <Binding ElementName="UserCB" Path="SelectedValue" Mode="OneWay"  />
+                        <Binding ElementName="PriceTB" Path="Text" Mode="OneWay"  />
+                        <Binding ElementName="AmountTB" Path="Text" Mode="OneWay"  />
+                        <Binding ElementName="BuyingDateDatePicker" Path="SelectedDate" Mode="OneWay"  />
+
+                        
+
+                    </MultiBinding>
+            </Button.CommandParameter>
+        </Button>
+
+
     </Grid>
+    </ScrollViewer>
 </UserControl>

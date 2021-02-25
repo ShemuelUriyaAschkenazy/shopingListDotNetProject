@@ -55,3 +55,5 @@ D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\WpfApp1\bin\
 D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\WpfApp1\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
 D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\WpfApp1\obj\Debug\userControls\AddValuesUC.g.cs
 D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\WpfApp1\obj\Debug\userControls\AddValuesUC.baml
+D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\WpfApp1\obj\Debug\userControls\WatchPanelLeftMenuUC.g.cs
+D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\WpfApp1\obj\Debug\userControls\WatchPanelLeftMenuUC.baml

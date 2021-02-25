@@ -29,41 +29,16 @@ namespace PL.models
         {
             BLAddingVal = new BLAddingVal();
 
-            buyings = new List<Buying>();
-            //goto bl&dal to get data...
-            buyings.Add(new Buying(1, 1, 1,3, 1,1,new DateTime()));
-            buyings.Add(new Buying(2, 1, 1, 3, 1, 2, new DateTime()));
-            buyings.Add(new Buying(3, 1, 1, 3, 1, 2, new DateTime()));
-            buyings.Add(new Buying(4, 1, 1, 3, 1, 3, new DateTime()));
-            buyings.Add(new Buying(5, 1, 1, 3, 1, 2, new DateTime()));
-            buyings.Add(new Buying(6, 1, 1, 3, 1, 2, new DateTime()));
+            buyings = BLAddingVal.GetAllBuyings();
 
 
-            userlist = new List<User>();
-            userlist.Add(new User(1, "avraham"));
-            userlist.Add(new User(2, "sara"));
-            userlist.Add(new User(3, "yonatan"));
+            userlist = BLAddingVal.GetAllUsers();
 
-            storelist = new List<Store>();
-            storelist.Add(new Store(1, "rami-levi"));
-            storelist.Add(new Store(2, "ace"));
-            storelist.Add(new Store(3, "begood"));
+            storelist = BLAddingVal.GetAllStores();
 
-            productlist = new List<Product>();
-            productlist.Add(new Product(1, "milk", 1));
-            productlist.Add(new Product(2, "milki", 2));
-            productlist.Add(new Product(3, "bread", 3));
-            productlist.Add(new Product("mei-eden", 4));
-            productlist.Add(new Product("milk", 5));
-            productlist.Add(new Product("milki", 6));
-            productlist.Add(new Product("bread", 1));
-            productlist.Add(new Product("mei-eden", 1));
+            productlist = BLAddingVal.GetAllProducts();
 
-            categorylist = new List<Category>();
-            categorylist.Add(new Category(1, "food"));
-            categorylist.Add(new Category(2, "clothes"));
-            categorylist.Add(new Category(3, "furniture"));
-            categorylist.Add(new Category(4, "communication"));
+            categorylist = BLAddingVal.GetAllCategories();
         }
 
        

@@ -77,9 +77,43 @@ namespace DAL
         public List<Product> GetAllProducts () {
             using (var ctx = new ShopingContext())
             {
-                return (from st in ctx.Products select st).ToList<Product>();
+                return (from p in ctx.Products select p).ToList<Product>();
             }
         }
+
+        public List<Buying> GetAllBuyings()
+        {
+            using (var ctx = new ShopingContext())
+            {
+                return (from b in ctx.Buyings select b).ToList<Buying>();
+            }
+        }
+
+        public List<Store> GetAllStores()
+        {
+            using (var ctx = new ShopingContext())
+            {
+                return (from s in ctx.Stores select s).ToList<Store>();
+            }
+        }
+
+        public List<User> GetAllUsers()
+        {
+            using (var ctx = new ShopingContext())
+            {
+                return (from u in ctx.Users select u).ToList<User>();
+            }
+        }
+
+        public List<Category> GetAllCategories()
+        {
+            using (var ctx = new ShopingContext())
+            {
+                return (from c in ctx.Categories select c).ToList<Category>();
+            }
+        }
+
+
 
         public int GetMaxCategoryId()
         {

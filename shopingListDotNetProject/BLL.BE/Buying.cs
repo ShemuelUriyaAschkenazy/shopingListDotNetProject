@@ -9,6 +9,17 @@ namespace BE
         public Buying()
         {
         }
+
+        public Buying(int storeId, int productId, int pricePerOneProduct, int amount, int userId, DateTime date)
+        {
+            StoreId = storeId;
+            ProductId = productId;
+            PricePerOneProduct = pricePerOneProduct;
+            Amount = amount;
+            UserId = userId;
+            Date = date;
+        }
+
         public Buying(int buyingId, int storeId, int productId, int pricePerOneProduct, int amount, int userId, DateTime date)
         {
             BuyingId = buyingId;

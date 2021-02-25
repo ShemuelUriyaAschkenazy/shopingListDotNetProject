@@ -18,21 +18,55 @@ namespace PL.viewModels
     {
         recentBuyingModel Model;
         MainWindow Main;
+
+        
      
         public GeneralVM(MainWindow main)
         {
             Model = new recentBuyingModel();
             //this.buyinglist = new ObservableCollection<Buying>();
-            userlist = new ObservableCollection<User>(Model.userlist);
-            storelist = new ObservableCollection<Store>(Model.storelist);
-            productlist = new ObservableCollection<Product>(Model.productlist);
-            categorylist = new ObservableCollection<Category>(Model.categorylist);
-
+            //userlist = new ObservableCollection<User>(Model.userlist);
+            //storelist = new ObservableCollection<Store>(Model.storelist);
+            //productlist = new ObservableCollection<Product>(Model.productlist);
+            //categorylist = new ObservableCollection<Category>(Model.categorylist);
+            
             this.Main = main;
-            main.AddDataMenu.ImportDataEvent += AddDataMenu_ImportDataEvent;
-            main.AddDataMenu.AddValuesEvent += AddDataMenu_AddValuesEvent;
+            main.TopMenu.OpenRecommendationPanelClickedEvent += TopMenu_OpenRecommendationPanelClickedEvent;
+            main.TopMenu.OpenAddPanelClickedEvent += TopMenu_OpenAddPanelClickedEvent;
+            main.TopMenu.OpenWatchPanelClickedEvent += TopMenu_OpenWatchPanelClickedEvent;
+
+
+
+            //main.AddDataMenu.ImportDataEvent += AddDataMenu_ImportDataEvent;
+            //main.AddDataMenu.AddValuesEvent += AddDataMenu_AddValuesEvent;
         }
 
+        private void TopMenu_OpenWatchPanelClickedEvent()
+        {
+            WatchPanelLeftMenuUC WatchPanelLeftMenuUC = new WatchPanelLeftMenuUC();
+            WatchPanelLeftMenuUC.HistoryButtonClickedEvent += WatchPanelLeftMenuUC_HistoryButtonClickedEvent;
+            Main.LeftMenuesGrid.Children.Clear();
+            Main.LeftMenuesGrid.Children.Add(WatchPanelLeftMenuUC);
+        }
+
+        private void TopMenu_OpenAddPanelClickedEvent()
+        {
+            AddDataLeftMenuUC AddDataLeftMenuUC = new AddDataLeftMenuUC();
+            AddDataLeftMenuUC.ImportDataEvent += AddDataMenu_ImportDataEvent;
+            AddDataLeftMenuUC.AddValuesEvent += AddDataMenu_AddValuesEvent;
+            Main.LeftMenuesGrid.Children.Clear();
+            Main.LeftMenuesGrid.Children.Add(AddDataLeftMenuUC);
+        }
+
+        private void WatchPanelLeftMenuUC_HistoryButtonClickedEvent()
+        {
+            //throw new NotImplementedException();
+        }
+
+        private void TopMenu_OpenRecommendationPanelClickedEvent()
+        {
+           // throw new NotImplementedException();
+        }
 
         private void AddDataMenu_ImportDataEvent()
         {

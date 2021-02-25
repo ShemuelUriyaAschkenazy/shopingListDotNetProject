@@ -18,11 +18,33 @@ namespace PL.userControls
     /// <summary>
     /// Interaction logic for topMenu.xaml
     /// </summary>
-    public partial class topMenu : UserControl
+    public partial class TopMenu : UserControl
     {
-        public topMenu()
+        public TopMenu()
         {
             InitializeComponent();
+        }
+
+        public event Action OpenAddPanelClickedEvent;
+        public event Action OpenWatchPanelClickedEvent;
+        public event Action OpenRecommendationPanelClickedEvent;
+
+        private void OpenAddPanel_Click(object sender, RoutedEventArgs e)
+        {
+            if (OpenAddPanelClickedEvent != null)
+                OpenAddPanelClickedEvent();
+        }
+
+        private void OpenWatchPanel_Click(object sender, RoutedEventArgs e)
+        {
+            if (OpenWatchPanelClickedEvent != null)
+                OpenWatchPanelClickedEvent();
+        }
+
+        private void OpenRecommendationPanel_Click(object sender, RoutedEventArgs e)
+        {
+            if (OpenRecommendationPanelClickedEvent != null)
+                OpenRecommendationPanelClickedEvent();
         }
     }
 }

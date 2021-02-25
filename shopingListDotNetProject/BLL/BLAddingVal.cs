@@ -1,6 +1,7 @@
 ﻿using BE;
 using DAL;
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 
 namespace BLL
@@ -48,6 +49,32 @@ namespace BLL
         {
             obj.BuyingId = dbAdapter.GetMaxBuyingId() + 1;
             return dbAdapter.Add(obj);
+        }
+
+        public List<Buying> GetAllBuyings()
+        {
+            return dbAdapter.GetAllBuyings();
+        }
+
+
+        public List<Store> GetAllStores()
+        {
+            return dbAdapter.GetAllStores();
+        }
+
+        public List<Category> GetAllCategories()
+        {
+            return dbAdapter.GetAllCategories();
+        }
+
+        public List<Product> GetAllProducts()
+        {
+            return dbAdapter.GetAllProducts();
+        }
+
+        public List<User> GetAllUsers()
+        {
+            return dbAdapter.GetAllUsers();
         }
     }
 }

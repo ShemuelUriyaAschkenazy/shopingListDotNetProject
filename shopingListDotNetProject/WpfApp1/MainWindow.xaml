@@ -16,10 +16,11 @@
      Background="{DynamicResource MaterialDesignPaper}"
      FontFamily="{DynamicResource MaterialDesignFont}">
    
-    <DockPanel>
+    <DockPanel Name="DockPanel">
 
-        <userControls:topMenu x:Name="TopMenu" DockPanel.Dock="Top" Height="100"/>
-        <userControls:addDataLeftMenuUC x:Name="AddDataMenu"  DockPanel.Dock="Left"  Width="130"/>
+        <userControls:TopMenu x:Name="TopMenu" DockPanel.Dock="Top" Height="100"/>
+        <Grid Name="LeftMenuesGrid" DockPanel.Dock="Left">
+        </Grid>
         <Grid x:Name="centerOfPageGrid" Margin="0,0,0,-0.333" Width="646">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>

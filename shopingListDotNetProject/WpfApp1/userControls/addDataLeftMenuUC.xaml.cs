@@ -20,12 +20,12 @@ namespace PL.userControls
     /// <summary>
     /// Interaction logic for addDataLeftMenuUC.xaml
     /// </summary>
-    public partial class addDataLeftMenuUC : UserControl
+    public partial class AddDataLeftMenuUC : UserControl
     {
         public event Action ImportDataEvent;
         public event Action AddValuesEvent;
 
-        public addDataLeftMenuUC()
+        public AddDataLeftMenuUC()
         {
             InitializeComponent();
         }
