@@ -90,6 +90,9 @@
     <Compile Include="userControls\TopMenu.xaml.cs">
       <DependentUpon>TopMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="userControls\WatchDataUC.xaml.cs">
+      <DependentUpon>WatchDataUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="userControls\WatchPanelLeftMenuUC.xaml.cs">
       <DependentUpon>WatchPanelLeftMenuUC.xaml</DependentUpon>
     </Compile>
@@ -97,6 +100,7 @@
     <Compile Include="viewModels\GeneralVM.cs" />
     <Compile Include="viewModels\IVM.cs" />
     <Compile Include="viewModels\RecentBuyingVM.cs" />
+    <Compile Include="viewModels\WatchDataVM.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -122,6 +126,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="userControls\TopMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="userControls\WatchDataUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

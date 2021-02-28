@@ -60,7 +60,11 @@ namespace PL.viewModels
 
         private void WatchPanelLeftMenuUC_HistoryButtonClickedEvent()
         {
-            //throw new NotImplementedException();
+            WatchDataUC uc = new WatchDataUC();
+            Grid.SetRow(uc, 2);
+            Main.centerOfPageGrid.Children.Clear();
+            Main.centerOfPageGrid.Children.Add(uc);
+            Main.CurrentVM = new WatchDataVM(Main);
         }
 
         private void TopMenu_OpenRecommendationPanelClickedEvent()

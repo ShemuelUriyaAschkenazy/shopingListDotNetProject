@@ -57,3 +57,5 @@ D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\WpfApp1\obj\
 D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\WpfApp1\obj\Debug\userControls\AddValuesUC.baml
 D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\WpfApp1\obj\Debug\userControls\WatchPanelLeftMenuUC.g.cs
 D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\WpfApp1\obj\Debug\userControls\WatchPanelLeftMenuUC.baml
+D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\WpfApp1\obj\Debug\userControls\WatchDataUC.g.cs
+D:\desktopSystemsEngineeringCourse\project\shopingListDotNetProject\WpfApp1\obj\Debug\userControls\WatchDataUC.baml
