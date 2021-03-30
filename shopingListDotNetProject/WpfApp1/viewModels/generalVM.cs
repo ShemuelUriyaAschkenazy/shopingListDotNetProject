@@ -16,14 +16,14 @@ namespace PL.viewModels
 {
     public class GeneralVM: IVM
     {
-        recentBuyingModel Model;
+        BuyingModel Model;
         MainWindow Main;
 
         
      
         public GeneralVM(MainWindow main)
         {
-            Model = new recentBuyingModel();
+            Model = new BuyingModel();
             //this.buyinglist = new ObservableCollection<Buying>();
             //userlist = new ObservableCollection<User>(Model.userlist);
             //storelist = new ObservableCollection<Store>(Model.storelist);

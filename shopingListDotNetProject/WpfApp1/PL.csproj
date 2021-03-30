@@ -37,11 +37,32 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Google.Apis, Version=1.51.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.51.0\lib\net45\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.51.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.51.0\lib\net45\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.51.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.51.0\lib\net45\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.51.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.51.0\lib\net45\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Drive.v3, Version=1.51.0.2265, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Drive.v3.1.51.0.2265\lib\net45\Google.Apis.Drive.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.51.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.51.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialDesignColors, Version=2.0.0.2422, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.2.0.0\lib\net452\MaterialDesignColors.dll</HintPath>
     </Reference>
     <Reference Include="MaterialDesignThemes.Wpf, Version=4.0.0.2422, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignThemes.4.0.0\lib\net452\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -76,7 +97,7 @@
     <Compile Include="converters\ValuesToBuyingConverter.cs" />
     <Compile Include="converters\ValuesToProductConverter.cs" />
     <Compile Include="ExtensionMethod.cs" />
-    <Compile Include="models\recentBuyingModel.cs" />
+    <Compile Include="models\BuyingModel.cs" />
     <Compile Include="taskManager.cs" />
     <Compile Include="userControls\AddDataLeftMenuUC.xaml.cs">
       <DependentUpon>AddDataLeftMenuUC.xaml</DependentUpon>
@@ -156,6 +177,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="credentials.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -166,16 +190,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLL.BE\BE.csproj">
-      <Project>{a3c28a21-0ed1-4ba6-8cd9-6af991074f78}</Project>
-      <Name>BE</Name>
+    <ProjectReference Include="..\BLL.BE2\BLL.BE2.csproj">
+      <Project>{4323b35f-b04f-4ec8-8b1d-2e9a87121693}</Project>
+      <Name>BLL.BE2</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BLL\BLL.csproj">
-      <Project>{8bcbb3d9-eee2-47fa-8cd5-a33334a21e7b}</Project>
-      <Name>BLL</Name>
+    <ProjectReference Include="..\BLL2\BLL2.csproj">
+      <Project>{0249caef-f661-4eab-b9b0-5e71f8109d65}</Project>
+      <Name>BLL2</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

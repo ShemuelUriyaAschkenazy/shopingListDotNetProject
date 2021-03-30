@@ -14,7 +14,7 @@ namespace PL.viewModels
 {
     class AddValuesVM:IVM
     {
-        recentBuyingModel Model;
+        BuyingModel Model;
         MainWindow Main;
         AddValuesUC AddValuesUC;
 
@@ -26,7 +26,7 @@ namespace PL.viewModels
         public AddValuesVM(MainWindow main)
         {
             Main = main;
-            Model = new recentBuyingModel();
+            Model = new BuyingModel();
             buyinglist = new ObservableCollection<Buying>(Model.buyings);
             userlist = new ObservableCollection<User>(Model.userlist);
             storelist = new ObservableCollection<Store>(Model.storelist);

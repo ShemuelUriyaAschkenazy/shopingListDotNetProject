@@ -12,14 +12,14 @@ namespace PL.viewModels
 {
     public class WatchDataVM : IVM
     {
-        recentBuyingModel Model;
+        BuyingModel Model;
         WatchDataUC WatchDataUC;
 
 
         public WatchDataVM(MainWindow main)
         {
             main.DataContext = this;
-            Model = new recentBuyingModel();
+            Model = new BuyingModel();
             buyinglist = new ObservableCollection<Buying>(Model.buyings);
             userlist = new ObservableCollection<User>(Model.userlist);
             storelist = new ObservableCollection<Store>(Model.storelist);

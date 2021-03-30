@@ -14,7 +14,7 @@ namespace PL.viewModels
 {
     class RecentBuyingVM : IVM
     {
-        recentBuyingModel Model;
+        BuyingModel Model;
         RecentBuyingUC RecentBuyingUC;
         public SaveAction SaveAction { get; set; }
 
@@ -22,8 +22,8 @@ namespace PL.viewModels
         public RecentBuyingVM(MainWindow main)
         {
             main.DataContext = this;
-            Model = new recentBuyingModel();
-            buyinglist = new ObservableCollection<Buying>(Model.buyings);
+            Model = new BuyingModel();
+            buyinglist = new ObservableCollection<Buying>(Model.RecentBuyings);
             userlist = new ObservableCollection<User>(Model.userlist);
             storelist = new ObservableCollection<Store>(Model.storelist);
             productlist = new ObservableCollection<Product>(Model.productlist);
