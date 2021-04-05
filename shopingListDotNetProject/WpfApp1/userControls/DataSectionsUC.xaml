@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="PL.userControls.DataSectionsUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             xmlns:local="clr-namespace:PL.userControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+       
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <lvc:CartesianChart Series="{Binding SeriesCollection}" LegendLocation="Right" Grid.ColumnSpan="6" Grid.Row="1" >
+            <lvc:CartesianChart.AxisY>
+                <lvc:Axis Title="Sales" LabelFormatter="{Binding YFormatter}"></lvc:Axis>
+            </lvc:CartesianChart.AxisY>
+            <lvc:CartesianChart.AxisX>
+                <lvc:Axis Title="Month" Labels="{Binding Labels}"></lvc:Axis>
+            </lvc:CartesianChart.AxisX>
+        </lvc:CartesianChart>
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock HorizontalAlignment="Center"  TextWrapping="Wrap" Text="Data Type:" VerticalAlignment="Center"/>
+            <ComboBox HorizontalAlignment="Left" Height="23"   Text="TextBox" VerticalAlignment="Center" Width="70" Grid.Column="1">
+                <ComboBoxItem IsSelected="True">product</ComboBoxItem>
+                <ComboBoxItem>store</ComboBoxItem>
+                <ComboBoxItem>category</ComboBoxItem>
+                <ComboBoxItem>total cost</ComboBoxItem>
+            </ComboBox>
+            <TextBlock HorizontalAlignment="Center"  TextWrapping="Wrap" Text="Parameter:" VerticalAlignment="Center" Grid.Column="2"/>
+            <ComboBox Name="parameterCB" ItemsSource="{Binding productlist}" SelectedValuePath="ProductId" DisplayMemberPath="ProductName" HorizontalAlignment="Left" Height="23"   Text="TextBox" VerticalAlignment="Center" Width="120" Grid.Column="3"/>
+            <TextBlock HorizontalAlignment="Center"  TextWrapping="Wrap" Text="Scaling:" VerticalAlignment="Center" Grid.Column="4"/>
+            <ComboBox Name="scalingCB" HorizontalAlignment="Left" Height="23"  Text="TextBox" VerticalAlignment="Center" Width="70" Grid.Column="5" SelectionChanged="scalingCB_SelectionChanged">
+
+            </ComboBox>
+            <Label x:Name="timeFirstLabel" HorizontalAlignment="Center" Content="Month:" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2"/>
+            <ComboBox x:Name="timeFirstCB" HorizontalAlignment="Left" Height="23"   VerticalAlignment="Center" Width="50" Grid.Column="3" Grid.Row="1"/>
+            <Label x:Name="timeSecondLabel"   Content="Year:" VerticalAlignment="Center"  Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center"/>
+            <ComboBox x:Name="timeSecondCB"  HorizontalAlignment="Left" Height="23"   VerticalAlignment="Center" Width="50" Grid.Row="1" Grid.Column="5"/>
+            <Button Content="view" Grid.Column="6" HorizontalAlignment="Center" Height="50"  Grid.RowSpan="2" VerticalAlignment="Center" Width="88" Command="{Binding viewGraphAction}" CommandParameter="{Binding ElementName=timeSecondCB, Path=SelectedItem}">
+                
+            </Button>
+        </Grid>
+    </Grid>
+</UserControl>

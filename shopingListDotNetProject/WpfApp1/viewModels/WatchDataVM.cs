@@ -12,7 +12,6 @@ namespace PL.viewModels
 {
     public class WatchDataVM : IVM
     {
-        BuyingModel Model;
         WatchDataUC WatchDataUC;
 
 
@@ -20,52 +19,71 @@ namespace PL.viewModels
         {
             main.DataContext = this;
             Model = new BuyingModel();
+
             buyinglist = new ObservableCollection<Buying>(Model.buyings);
             userlist = new ObservableCollection<User>(Model.userlist);
             storelist = new ObservableCollection<Store>(Model.storelist);
             productlist = new ObservableCollection<Product>(Model.productlist);
             categorylist = new ObservableCollection<Category>(Model.categorylist);
-            WatchDataUC = main.centerOfPageGrid.GetChildOfType<WatchDataUC>();
-
-            WatchDataUC.StoreColumn.ItemsSource = storelist;
-            WatchDataUC.UserColumn.ItemsSource = userlist;
-            WatchDataUC.ProductColumn.ItemsSource = productlist;
-
-
-
-
 
             Model.CategoryListChangedEvent += Model_CategoryListChangedEvent;
             Model.ProductListChangedEvent += Model_ProductListChangedEvent;
             Model.BuyingsListChangedEvent += Model_BuyingsListChangedEvent;
             Model.StoreListChangedEvent += Model_StoreListChangedEvent;
             Model.UserListChangedEvent += Model_UserListChangedEvent;
+
+            WatchDataUC = main.centerOfPageGrid.GetChildOfType<WatchDataUC>();
+            WatchDataUC.StoreColumn.ItemsSource = storelist;
+            WatchDataUC.UserColumn.ItemsSource = userlist;
+            WatchDataUC.ProductColumn.ItemsSource = productlist;
+
         }
 
-        private void Model_UserListChangedEvent(User obj)
+        private void Model_UserListChangedEvent()
         {
-            userlist.Add(obj);
+            userlist.Clear();
+            foreach (var u in Model.userlist)
+            {
+                userlist.Add(u);
+            }
         }
 
-        private void Model_StoreListChangedEvent(Store obj)
+        private void Model_StoreListChangedEvent()
         {
-            storelist.Add(obj);
+            storelist.Clear();
+            foreach (var u in Model.storelist)
+            {
+                storelist.Add(u);
+            }
         }
 
-        private void Model_BuyingsListChangedEvent(Buying obj)
+        private void Model_BuyingsListChangedEvent()
         {
-            buyinglist.Add(obj);
+            buyinglist.Clear();
+            foreach (var obj in Model.buyings)
+            {
+                buyinglist.Add(obj);
+            }
         }
 
-        private void Model_ProductListChangedEvent(Product obj)
+        private void Model_ProductListChangedEvent()
         {
-            productlist.Add(obj);
+            productlist.Clear();
+            foreach (var obj in Model.productlist)
+            {
+                productlist.Add(obj);
+            }
         }
 
-        private void Model_CategoryListChangedEvent(Category obj)
+        private void Model_CategoryListChangedEvent()
         {
-            categorylist.Add(obj);
+            categorylist.Clear();
+            foreach (var obj in Model.categorylist)
+            {
+                categorylist.Add(obj);
+            }
         }
+
 
     }
 

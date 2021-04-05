@@ -14,7 +14,7 @@ namespace PL.viewModels
 {
     class AddValuesVM:IVM
     {
-        BuyingModel Model;
+        
         MainWindow Main;
         AddValuesUC AddValuesUC;
 
@@ -32,6 +32,13 @@ namespace PL.viewModels
             storelist = new ObservableCollection<Store>(Model.storelist);
             productlist = new ObservableCollection<Product>(Model.productlist);
             categorylist = new ObservableCollection<Category>(Model.categorylist);
+
+            Model.CategoryListChangedEvent += Model_CategoryListChangedEvent;
+            Model.ProductListChangedEvent += Model_ProductListChangedEvent;
+            Model.BuyingsListChangedEvent += Model_BuyingsListChangedEvent;
+            Model.StoreListChangedEvent += Model_StoreListChangedEvent;
+            Model.UserListChangedEvent += Model_UserListChangedEvent;
+
             AddValuesUC = main.centerOfPageGrid.GetChildOfType<AddValuesUC>();
 
             AddCategoryAction = new AddCategoryAction();
@@ -49,43 +56,7 @@ namespace PL.viewModels
             AddBuyingAction = new AddBuyingAction();
             AddBuyingAction.AddBuyingClicked += AddBuyingAction_AddBuyingClicked;
 
-            Model.CategoryListChangedEvent += Model_CategoryListChangedEvent;
-            Model.ProductListChangedEvent += Model_ProductListChangedEvent;
-            Model.BuyingsListChangedEvent += Model_BuyingsListChangedEvent;
-            Model.StoreListChangedEvent += Model_StoreListChangedEvent;
-            Model.UserListChangedEvent += Model_UserListChangedEvent;
-        }
-
-        private void Model_UserListChangedEvent(User obj)
-        {
-            userlist.Add(obj);
-            AddValuesUC.UserNameTB.Text = "";
-        }
-
-        private void Model_StoreListChangedEvent(Store obj)
-        {
-            storelist.Add(obj);
-            AddValuesUC.StoreNameTB.Text = "";
-        }
-
-        private void Model_BuyingsListChangedEvent(Buying obj)
-        {
-            buyinglist.Add(obj);
-            
-        }
-
-        private void Model_ProductListChangedEvent(Product obj)
-        {
-            productlist.Add(obj);
-            AddValuesUC.ProductNameTB.Text = "";
-            AddValuesUC.CategoryCB.SelectedItem = null;
-
-        }
-
-        private void Model_CategoryListChangedEvent(Category obj)
-        {
-            categorylist.Add(obj);
-            AddValuesUC.CategoryNameTB.Text = "";
+          
         }
         
         //on pressing on "הוסף לקטלוג"
@@ -116,7 +87,50 @@ namespace PL.viewModels
             Model.Add(obj);
         }
 
+        private void Model_UserListChangedEvent()
+        {
+            userlist.Clear();
+            foreach (var u in Model.userlist)
+            {
+                userlist.Add(u);
+            }
+        }
 
+        private void Model_StoreListChangedEvent()
+        {
+            storelist.Clear();
+            foreach (var u in Model.storelist)
+            {
+                storelist.Add(u);
+            }
+        }
+
+        private void Model_BuyingsListChangedEvent()
+        {
+            buyinglist.Clear();
+            foreach (var obj in Model.buyings)
+            {
+                buyinglist.Add(obj);
+            }
+        }
+
+        private void Model_ProductListChangedEvent()
+        {
+            productlist.Clear();
+            foreach (var obj in Model.productlist)
+            {
+                productlist.Add(obj);
+            }
+        }
+
+        private void Model_CategoryListChangedEvent()
+        {
+            categorylist.Clear();
+            foreach (var obj in Model.categorylist)
+            {
+                categorylist.Add(obj);
+            }
+        }
 
 
 

@@ -19,20 +19,20 @@
         <Button x:Name="addData" Grid.Row="1" Content="שמור בהיסטוריית הקניות" Command="{Binding SaveAction}" CommandParameter="{Binding ElementName=ConfirmCheckBox, Path=IsChecked}" Grid.Column="0" Width="Auto" Height="Auto" Click="AddData_Click" />
         <CheckBox x:Name="ConfirmCheckBox" Content="אני מאשר את נכונות הנתונים" FlowDirection="RightToLeft" Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Center"   Grid.Row="1"/>
 
-        <DataGrid Name="recentBuyingsDataGrid" ItemsSource="{Binding buyinglist}" AutoGenerateColumns="False" CanUserAddRows="False"  Grid.Row="2" Grid.ColumnSpan="2" Margin="0,0.333,0,0">
+        <DataGrid Name="recentBuyingsDataGrid" ItemsSource="{Binding RecentBuyingList, Mode=TwoWay}" AutoGenerateColumns="False" CanUserAddRows="False"  Grid.Row="2" Grid.ColumnSpan="2" Margin="0,0.333,0,0">
             <DataGrid.Columns>
-                <DataGridComboBoxColumn x:Name="ProductColumn" Header="Product" DisplayMemberPath="ProductName" ItemsSource="{Binding productlist}" SelectedValueBinding="{Binding ProductId}" SelectedValuePath="ProductId"  />
-                <DataGridComboBoxColumn x:Name="StoreColumn" Header="Store" DisplayMemberPath="StoreName" ItemsSource="{Binding storelist}" SelectedValueBinding="{Binding StoreId}" SelectedValuePath="StoreId" />
-                <DataGridTextColumn Header="Amount" Binding="{Binding Amount}"/>
-                <DataGridTextColumn Header="Price" Binding="{Binding PricePerOneProduct}"/>
+                <DataGridComboBoxColumn x:Name="ProductColumn" Header="Product" DisplayMemberPath="ProductName" ItemsSource="{Binding productlist, Mode=TwoWay}" SelectedValueBinding="{Binding ProductId}" SelectedValuePath="ProductId"  />
+                <DataGridComboBoxColumn x:Name="StoreColumn" Header="Store" DisplayMemberPath="StoreName" ItemsSource="{Binding storelist, Mode=TwoWay}" SelectedValueBinding="{Binding StoreId}" SelectedValuePath="StoreId" />
+                <DataGridTextColumn Header="Amount" Binding="{Binding Amount, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="Price" Binding="{Binding PricePerOneProduct, Mode=TwoWay}"/>
                 <DataGridTemplateColumn x:Name="dateColumn" Header="Date" Width="auto" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <DatePicker SelectedDate="{Binding Date, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+                            <DatePicker SelectedDate="{Binding Date, Mode=TwoWay, NotifyOnTargetUpdated=True,NotifyOnSourceUpdated=True, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridComboBoxColumn x:Name="UserColumn" Header="User" DisplayMemberPath="UserName" ItemsSource="{Binding userlist}" SelectedValueBinding="{Binding UserId}" SelectedValuePath="UserId"/>
+                <DataGridComboBoxColumn x:Name="UserColumn" Header="User" DisplayMemberPath="UserName" ItemsSource="{Binding userlist, Mode=TwoWay}" SelectedValueBinding="{Binding UserId}" SelectedValuePath="UserId"/>
 
 
             </DataGrid.Columns>

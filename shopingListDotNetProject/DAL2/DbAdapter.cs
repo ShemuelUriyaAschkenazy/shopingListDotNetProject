@@ -161,7 +161,6 @@ namespace DAL
     {
         public ShopingContext():base("ShopingDB4")
         {
-
             /*
             //https://stackoverflow.com/questions/32607736/the-entity-framework-provider-type-system-data-entity-sqlserver-sqlproviderserv/32617247
             */

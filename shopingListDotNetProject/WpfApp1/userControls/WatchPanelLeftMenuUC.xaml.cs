@@ -21,6 +21,8 @@ namespace PL.userControls
     public partial class WatchPanelLeftMenuUC : UserControl
     {
         public event Action HistoryButtonClickedEvent;
+        public event Action DataSectionsButtonClickedEvent;
+
         public WatchPanelLeftMenuUC()
         {
             InitializeComponent();
@@ -30,6 +32,12 @@ namespace PL.userControls
         {
             if (HistoryButtonClickedEvent != null)
                 HistoryButtonClickedEvent();
+        }
+
+        private void SeeGraphsButton(object sender, RoutedEventArgs e)
+        {
+            if (DataSectionsButtonClickedEvent != null)
+                DataSectionsButtonClickedEvent();
         }
     }
 }

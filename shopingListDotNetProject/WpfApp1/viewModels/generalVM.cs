@@ -16,7 +16,6 @@ namespace PL.viewModels
 {
     public class GeneralVM: IVM
     {
-        BuyingModel Model;
         MainWindow Main;
 
         
@@ -45,9 +44,12 @@ namespace PL.viewModels
         {
             WatchPanelLeftMenuUC WatchPanelLeftMenuUC = new WatchPanelLeftMenuUC();
             WatchPanelLeftMenuUC.HistoryButtonClickedEvent += WatchPanelLeftMenuUC_HistoryButtonClickedEvent;
+            WatchPanelLeftMenuUC.DataSectionsButtonClickedEvent += WatchPanelLeftMenuUC_DataSectionsButtonClickedEvent;
             Main.LeftMenuesGrid.Children.Clear();
             Main.LeftMenuesGrid.Children.Add(WatchPanelLeftMenuUC);
         }
+
+       
 
         private void TopMenu_OpenAddPanelClickedEvent()
         {
@@ -65,6 +67,16 @@ namespace PL.viewModels
             Main.centerOfPageGrid.Children.Clear();
             Main.centerOfPageGrid.Children.Add(uc);
             Main.CurrentVM = new WatchDataVM(Main);
+        }
+
+        private void WatchPanelLeftMenuUC_DataSectionsButtonClickedEvent()
+        {
+            DataSectionsUC uc = new DataSectionsUC();
+            Grid.SetRow(uc, 2);
+            Main.centerOfPageGrid.Children.Clear();
+            Main.centerOfPageGrid.Children.Add(uc);
+            Main.CurrentVM = new DataSectionsVM(Main, uc);
+            Main.DataContext = Main.CurrentVM;
         }
 
         private void TopMenu_OpenRecommendationPanelClickedEvent()

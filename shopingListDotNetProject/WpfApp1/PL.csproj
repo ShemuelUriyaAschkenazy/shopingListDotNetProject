@@ -55,6 +55,12 @@
     <Reference Include="Google.Apis.PlatformServices, Version=1.51.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Apis.1.51.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
     </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialDesignColors, Version=2.0.0.2422, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.2.0.0\lib\net452\MaterialDesignColors.dll</HintPath>
     </Reference>
@@ -91,6 +97,7 @@
     <Compile Include="commands\AddStoreAction.cs" />
     <Compile Include="commands\AddUserAction.cs" />
     <Compile Include="commands\SaveAction.cs" />
+    <Compile Include="commands\ViewGraphAction.cs" />
     <Compile Include="converters\StringToUserConverter.cs" />
     <Compile Include="converters\StringToStoreConverter.cs" />
     <Compile Include="converters\StringToCategoryConverter.cs" />
@@ -98,12 +105,17 @@
     <Compile Include="converters\ValuesToProductConverter.cs" />
     <Compile Include="ExtensionMethod.cs" />
     <Compile Include="models\BuyingModel.cs" />
+    <Compile Include="models\IModel.cs" />
+    <Compile Include="models\RecentBuyingModel.cs" />
     <Compile Include="taskManager.cs" />
     <Compile Include="userControls\AddDataLeftMenuUC.xaml.cs">
       <DependentUpon>AddDataLeftMenuUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="userControls\AddValuesUC.xaml.cs">
       <DependentUpon>AddValuesUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="userControls\DataSectionsUC.xaml.cs">
+      <DependentUpon>DataSectionsUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="userControls\RecentBuyingUC.xaml.cs">
       <DependentUpon>RecentBuyingUC.xaml</DependentUpon>
@@ -118,6 +130,7 @@
       <DependentUpon>WatchPanelLeftMenuUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="viewModels\AddValuesVM.cs" />
+    <Compile Include="viewModels\DataSectionsVM.cs" />
     <Compile Include="viewModels\GeneralVM.cs" />
     <Compile Include="viewModels\IVM.cs" />
     <Compile Include="viewModels\RecentBuyingVM.cs" />
@@ -139,6 +152,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="userControls\AddValuesUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="userControls\DataSectionsUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

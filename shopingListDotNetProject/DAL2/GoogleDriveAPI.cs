@@ -40,7 +40,7 @@ namespace DAL
                     "user",
                     CancellationToken.None,
                     new FileDataStore(credPath, true)).Result;
-                //Console.WriteLine("Credential file saved to: " + credPath);
+                Console.WriteLine("Credential file saved to: " + credPath);
             }
         }
 
@@ -70,7 +70,7 @@ namespace DAL
 
             IList<Google.Apis.Drive.v3.Data.File> files = listRequest.Execute()
                 .Files;
-            //Console.WriteLine("Files:");
+            Console.WriteLine("Files:");
             if (files != null && files.Count > 0)
             {
                 FilesResource.GetRequest request;

@@ -14,29 +14,23 @@ namespace PL.viewModels
 {
     class RecentBuyingVM : IVM
     {
-        BuyingModel Model;
         RecentBuyingUC RecentBuyingUC;
         public SaveAction SaveAction { get; set; }
-
+        public ObservableCollection<Buying> RecentBuyingList { get; set; }
 
         public RecentBuyingVM(MainWindow main)
         {
+
+
             main.DataContext = this;
-            Model = new BuyingModel();
-            buyinglist = new ObservableCollection<Buying>(Model.RecentBuyings);
+            Model = new RecentBuyingModel();
+            RecentBuyingList = new ObservableCollection<Buying>((Model as RecentBuyingModel).RecentBuyings);
+
+            buyinglist = new ObservableCollection<Buying>(Model.buyings);
             userlist = new ObservableCollection<User>(Model.userlist);
             storelist = new ObservableCollection<Store>(Model.storelist);
             productlist = new ObservableCollection<Product>(Model.productlist);
             categorylist = new ObservableCollection<Category>(Model.categorylist);
-            RecentBuyingUC = main.centerOfPageGrid.GetChildOfType<RecentBuyingUC>();
-
-            RecentBuyingUC.StoreColumn.ItemsSource = storelist;
-            RecentBuyingUC.UserColumn.ItemsSource = userlist;
-            RecentBuyingUC.ProductColumn.ItemsSource = productlist;
-
-
-
-
 
             Model.CategoryListChangedEvent += Model_CategoryListChangedEvent;
             Model.ProductListChangedEvent += Model_ProductListChangedEvent;
@@ -44,42 +38,66 @@ namespace PL.viewModels
             Model.StoreListChangedEvent += Model_StoreListChangedEvent;
             Model.UserListChangedEvent += Model_UserListChangedEvent;
 
+            RecentBuyingUC = main.centerOfPageGrid.GetChildOfType<RecentBuyingUC>();
+            RecentBuyingUC.StoreColumn.ItemsSource = storelist;
+            RecentBuyingUC.UserColumn.ItemsSource = userlist;
+            RecentBuyingUC.ProductColumn.ItemsSource = productlist;
+
+
             SaveAction = new SaveAction();
             SaveAction.SaveButtonClicked += SaveAction_SaveButtonClicked;
         }
 
-        private void Model_UserListChangedEvent(User obj)
-        {
-            userlist.Add(obj);
-        }
-
-        private void Model_StoreListChangedEvent(Store obj)
-        {
-            storelist.Add(obj);
-        }
-
-        private void Model_BuyingsListChangedEvent(Buying obj)
-        {
-            buyinglist.Add(obj);
-        }
-
-        private void Model_ProductListChangedEvent(Product obj)
-        {
-            productlist.Add(obj);
-        }
-
-        private void Model_CategoryListChangedEvent(Category obj)
-        {
-            categorylist.Add(obj);
-        }
-
         private void SaveAction_SaveButtonClicked()
         {
-            //Model.Add(IEnumerable<Buying>);
+            (Model as RecentBuyingModel).Add(RecentBuyingList.ToList());
         }
 
 
+        private void Model_UserListChangedEvent()
+        {
+            userlist.Clear();
+            foreach (var u in Model.userlist)
+            {
+                userlist.Add(u);
+            }
+        }
 
+        private void Model_StoreListChangedEvent()
+        {
+            storelist.Clear();
+            foreach (var u in Model.storelist)
+            {
+                storelist.Add(u);
+            }
+        }
+
+        private void Model_BuyingsListChangedEvent()
+        {
+            buyinglist.Clear();
+            foreach (var obj in Model.buyings)
+            {
+                buyinglist.Add(obj);
+            }
+        }
+
+        private void Model_ProductListChangedEvent()
+        {
+            productlist.Clear();
+            foreach (var obj in Model.productlist)
+            {
+                productlist.Add(obj);
+            }
+        }
+
+        private void Model_CategoryListChangedEvent()
+        {
+            categorylist.Clear();
+            foreach (var obj in Model.categorylist)
+            {
+                categorylist.Add(obj);
+            }
+        }
 
 
     }

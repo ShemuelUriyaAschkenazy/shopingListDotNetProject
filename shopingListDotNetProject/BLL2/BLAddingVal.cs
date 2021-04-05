@@ -11,12 +11,18 @@ namespace BLL
         private DbAdapter dbAdapter;
         private GoogleDriveAPI GoogleDriveAPI;
 
+        public event Action BuyingListChangedEvent;
+        public event Action CategoryListChangedEvent;
+        public event Action UserListChangedEvent;
+        public event Action StoreListChangedEvent;
+        public event Action ProductListChangedEvent;
+
+
         public BLAddingVal()
         {
             //var ensureDllIsCopied = new Google.Apis.Drive.v3.DriveService();
             dbAdapter = new DbAdapter();
             GoogleDriveAPI = new GoogleDriveAPI();
-
         }
 
         public void Save(Category category)
@@ -24,38 +30,60 @@ namespace BLL
             dbAdapter.Save(category);
         }
 
-        public Category Add(Category obj)
+        public void Add(Category obj)
         {
             obj.CategoryId = dbAdapter.GetMaxCategoryId() + 1;
-            return dbAdapter.Add(obj);
+            dbAdapter.Add(obj);
+            if (CategoryListChangedEvent != null) CategoryListChangedEvent();
+
+
         }
 
-        public Product Add(Product obj)
+        public void Add(Product obj)
         {
             obj.ProductId = dbAdapter.GetMaxProductId() + 1;
-            return dbAdapter.Add(obj);
+            dbAdapter.Add(obj);
+            if (ProductListChangedEvent != null) ProductListChangedEvent();
+
         }
 
-        public User Add(User obj)
+        public void Add(User obj)
         {
             obj.UserId = dbAdapter.GetMaxUserId() + 1;
-            return dbAdapter.Add(obj);
+            dbAdapter.Add(obj);
+            if (UserListChangedEvent != null) UserListChangedEvent();
+
         }
 
-        public Store Add(Store obj)
+        public void Add(Store obj)
         {
             obj.StoreId = dbAdapter.GetMaxStoreId() + 1;
-            return dbAdapter.Add(obj);
+            dbAdapter.Add(obj);
+            if (StoreListChangedEvent != null) StoreListChangedEvent();
+
         }
 
-     
 
-        public Buying Add(Buying obj)
+
+        public void Add(Buying obj)
         {
             obj.BuyingId = dbAdapter.GetMaxBuyingId() + 1;
-            return dbAdapter.Add(obj);
+            dbAdapter.Add(obj);
+            if (BuyingListChangedEvent != null) BuyingListChangedEvent();
+
         }
 
+        public void Add(List<Buying> list)
+        {
+            int lastId = dbAdapter.GetMaxBuyingId();
+            List<Buying> SavedList = new List<Buying>();
+            foreach (var obj in list)
+            {
+                obj.BuyingId = ++lastId;
+                SavedList.Add(dbAdapter.Add(obj));
+            }
+            if (BuyingListChangedEvent != null) BuyingListChangedEvent();
+        }
         public List<Buying> GetAllBuyings()
         {
             return dbAdapter.GetAllBuyings();
@@ -96,5 +124,7 @@ namespace BLL
         {
             return dbAdapter.GetAllUsers();
         }
+
+        
     }
 }

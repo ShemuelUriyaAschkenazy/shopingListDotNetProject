@@ -77,6 +77,7 @@ C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\Wp
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\DAL2.dll
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\EntityFramework.dll
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\MessagingToolkit.QRCode.dll
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\BLL.BE2.pdb
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\BLL2.pdb
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\Google.Apis.pdb
@@ -122,4 +123,11 @@ C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\Wp
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\obj\Debug\PL.csproj.CopyComplete
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\obj\Debug\PL.exe
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\obj\Debug\PL.pdb
-C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\MessagingToolkit.QRCode.dll
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\LiveCharts.dll
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\LiveCharts.pdb
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\LiveCharts.xml
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\obj\Debug\userControls\DataSectionsUC.g.cs
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\obj\Debug\userControls\DataSectionsUC.baml
