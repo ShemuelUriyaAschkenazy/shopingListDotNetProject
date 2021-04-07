@@ -22,6 +22,7 @@ namespace PL.userControls
     {
         public event Action HistoryButtonClickedEvent;
         public event Action DataSectionsButtonClickedEvent;
+        public event Action AnalyzeButtonClickedEvent;
 
         public WatchPanelLeftMenuUC()
         {
@@ -38,6 +39,12 @@ namespace PL.userControls
         {
             if (DataSectionsButtonClickedEvent != null)
                 DataSectionsButtonClickedEvent();
+        }
+
+        private void AnalyzeButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (AnalyzeButtonClickedEvent != null)
+                AnalyzeButtonClickedEvent();
         }
     }
 }

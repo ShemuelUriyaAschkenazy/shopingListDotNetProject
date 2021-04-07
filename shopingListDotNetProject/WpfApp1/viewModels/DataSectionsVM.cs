@@ -2,6 +2,7 @@
 using BLL.BE2;
 using LiveCharts;
 using LiveCharts.Wpf;
+using LiveCharts.Wpf.Charts.Base;
 using PL.commands;
 using PL.models;
 using PL.userControls;
@@ -44,23 +45,22 @@ namespace PL.viewModels
 
             uc.scalingChangedEvent += Uc_scalingChangedEvent;
 
-            //ChartValues<double> vals = new ChartValues<double>((Model as BuyingModel).getDailyProductPurchases(1,2021,1) as IEnumerable<double>);
-            //uc.parameterCB.SelectedValue = productlist[0];
+            uc.parameterCB.SelectedValue = productlist[0];
             int[] yearList= new int[100];
             for (int i=0; i<100; i++)
             {
                 yearList[i] = i + 1990;
             }
             uc.timeSecondCB.ItemsSource = yearList;
-            uc.timeSecondCB.SelectedItem = DateTime.Now.Year; 
-
+            uc.timeSecondCB.SelectedItem = DateTime.Now.Year;
+            uc.chartAxisX.Title = uc.timeFirstCB.SelectedValue.ToString();
             SeriesCollection = new SeriesCollection
             {
                 new LineSeries
                 {
-                    Title = "Series 1",
+                    Title = (uc.parameterCB.SelectedValue as Product).ProductName,
                     Values = new ChartValues<double>((Model as BuyingModel).getDailyProductPurchases(1,2021,1) as IEnumerable<double>)
-                    
+       
                 }
          
             };
@@ -160,8 +160,9 @@ namespace PL.viewModels
                     yearList[i] = i + 1990;
                 }
                 uc.timeFirstCB.ItemsSource = yearList;
+                uc.timeFirstCB.SelectedItem = DateTime.Now.Year;
+               
                 uc.timeSecondCB.SelectedItem = DateTime.Now.Year;
-                
                 uc.timeSecondLabel.Content = "To";
 
                 uc.timeFirstLabel.Visibility = Visibility.Visible;
@@ -178,11 +179,55 @@ namespace PL.viewModels
         {
             if ((time)uc.scalingCB.SelectedItem == time.daily) {
                 
-                int productId = (int)uc.parameterCB.SelectedValue;
+                int productId = (uc.parameterCB.SelectedValue as Product).ProductId;
                 int year = (int)uc.timeSecondCB.SelectedItem;
                 int month =(int)uc.timeFirstCB.SelectedItem;
-                SeriesCollection[0].Values = new ChartValues<double>((Model as BuyingModel).getDailyProductPurchases(productId, year, month) as IEnumerable<double>);
-        }
+                SeriesCollection[0] = new LineSeries
+                {
+                    Values = new ChartValues<double>((Model as BuyingModel).getDailyProductPurchases(productId, year, month) as IEnumerable<double>),
+                    Title = (uc.parameterCB.SelectedValue as Product).ProductName
+
+                };
+                string[] labels = new string[DateTime.DaysInMonth(year, month)];
+                for (int i=0; i<labels.Length; i++) { labels[i] = (i + 1).ToString(); }
+                uc.chartAxisX.Labels = labels;
+                uc.chartAxisX.Title = uc.timeFirstCB.SelectedItem.ToString();
+            }
+            else if ((time)uc.scalingCB.SelectedItem == time.annual)
+            {
+                int productId = (uc.parameterCB.SelectedValue as Product).ProductId;
+                int year1 = (int)uc.timeFirstCB.SelectedItem;
+                int year2 = (int)uc.timeSecondCB.SelectedItem;
+
+
+                SeriesCollection[0] = new LineSeries
+                {
+                    Values = new ChartValues<double>((Model as BuyingModel).getAnnualProductPurchases(productId, year1, year2) as IEnumerable<double>),
+                    Title = (uc.parameterCB.SelectedValue as Product).ProductName
+
+                };
+                string[] labels = new string[year2-year1+1];
+                for (int i = 0; i < labels.Length; i++) { labels[i] = (i + year1).ToString(); }
+                uc.chartAxisX.Labels = labels;
+                uc.chartAxisX.Title = uc.timeFirstCB.SelectedItem.ToString()+"-"+ uc.timeSecondCB.SelectedItem.ToString();
+            }
+            else
+            {
+                int productId = (uc.parameterCB.SelectedValue as Product).ProductId;
+                int year = (int)uc.timeSecondCB.SelectedItem;
+
+                SeriesCollection[0] = new LineSeries
+                {
+                    Values = new ChartValues<double>((Model as BuyingModel).getMonthlyProductPurchases(productId, year) as IEnumerable<double>),
+                    Title = (uc.parameterCB.SelectedValue as Product).ProductName
+
+                };
+                uc.chartAxisX.Labels = new[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
+                uc.chartAxisX.Title = uc.timeSecondCB.SelectedItem.ToString();
+
+
+            }
+
 
         }
 

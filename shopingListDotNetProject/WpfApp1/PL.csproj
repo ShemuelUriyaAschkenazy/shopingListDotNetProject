@@ -73,6 +73,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -114,6 +116,9 @@
     <Compile Include="userControls\AddValuesUC.xaml.cs">
       <DependentUpon>AddValuesUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="userControls\AnalyzeBuyingUC.xaml.cs">
+      <DependentUpon>AnalyzeBuyingUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="userControls\DataSectionsUC.xaml.cs">
       <DependentUpon>DataSectionsUC.xaml</DependentUpon>
     </Compile>
@@ -130,6 +135,7 @@
       <DependentUpon>WatchPanelLeftMenuUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="viewModels\AddValuesVM.cs" />
+    <Compile Include="viewModels\AnalyzeBuyingVM.cs" />
     <Compile Include="viewModels\DataSectionsVM.cs" />
     <Compile Include="viewModels\GeneralVM.cs" />
     <Compile Include="viewModels\IVM.cs" />
@@ -152,6 +158,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="userControls\AddValuesUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="userControls\AnalyzeBuyingUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

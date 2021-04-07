@@ -17,5 +17,7 @@
         </Grid.RowDefinitions>
         <Button Name="HistoryButton" Content="הקניות שלך"  Grid.Row="1" Margin="8" Click="HistoryButton_Click"/>
         <Button x:Name="DataSectionsButton" Content="חתכי נתונים"  Grid.Row="2" Margin="8" Click="SeeGraphsButton"/>
+        <Button Name="AnalyzeButton" Content="ניתוח הקניות שלך" Grid.Row="3" Click="AnalyzeButton_Click" FontSize="12"/>
+
     </Grid>
 </UserControl>

@@ -45,11 +45,12 @@ namespace PL.viewModels
             WatchPanelLeftMenuUC WatchPanelLeftMenuUC = new WatchPanelLeftMenuUC();
             WatchPanelLeftMenuUC.HistoryButtonClickedEvent += WatchPanelLeftMenuUC_HistoryButtonClickedEvent;
             WatchPanelLeftMenuUC.DataSectionsButtonClickedEvent += WatchPanelLeftMenuUC_DataSectionsButtonClickedEvent;
+            WatchPanelLeftMenuUC.AnalyzeButtonClickedEvent += WatchPanelLeftMenuUC_AnalyzeButtonClickedEvent;
             Main.LeftMenuesGrid.Children.Clear();
             Main.LeftMenuesGrid.Children.Add(WatchPanelLeftMenuUC);
         }
 
-       
+        
 
         private void TopMenu_OpenAddPanelClickedEvent()
         {
@@ -67,6 +68,15 @@ namespace PL.viewModels
             Main.centerOfPageGrid.Children.Clear();
             Main.centerOfPageGrid.Children.Add(uc);
             Main.CurrentVM = new WatchDataVM(Main);
+        }
+
+        private void WatchPanelLeftMenuUC_AnalyzeButtonClickedEvent()
+        {
+            AnalyzeBuyingUC analyzeBuyingUC = new AnalyzeBuyingUC();
+            Main.centerOfPageGrid.Children.Clear();
+            Main.centerOfPageGrid.Children.Add(analyzeBuyingUC);
+            Main.CurrentVM = new AnalyzeBuyingVM(Main);
+            Main.DataContext = Main.CurrentVM;
         }
 
         private void WatchPanelLeftMenuUC_DataSectionsButtonClickedEvent()

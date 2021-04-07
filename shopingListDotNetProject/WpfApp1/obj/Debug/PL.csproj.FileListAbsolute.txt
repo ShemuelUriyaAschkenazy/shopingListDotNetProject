@@ -71,6 +71,8 @@ C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\Wp
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\Google.Apis.dll
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\Google.Apis.Drive.v3.dll
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\Google.Apis.PlatformServices.dll
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\LiveCharts.dll
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\LiveCharts.Wpf.dll
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\MaterialDesignColors.dll
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\MaterialDesignThemes.Wpf.dll
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\Newtonsoft.Json.dll
@@ -88,6 +90,10 @@ C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\Wp
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\Google.Apis.Core.xml
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\Google.Apis.Drive.v3.pdb
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\Google.Apis.Drive.v3.xml
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\LiveCharts.pdb
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\LiveCharts.xml
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\LiveCharts.Wpf.xml
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\MaterialDesignColors.pdb
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\MaterialDesignThemes.Wpf.pdb
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\MaterialDesignThemes.Wpf.xml
@@ -100,6 +106,7 @@ C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\Wp
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\obj\Debug\MainWindow.g.cs
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\obj\Debug\userControls\AddDataLeftMenuUC.g.cs
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\obj\Debug\userControls\AddValuesUC.g.cs
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\obj\Debug\userControls\DataSectionsUC.g.cs
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\obj\Debug\userControls\RecentBuyingUC.g.cs
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\obj\Debug\userControls\TopMenu.g.cs
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\obj\Debug\userControls\WatchDataUC.g.cs
@@ -112,6 +119,7 @@ C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\Wp
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\obj\Debug\MainWindow.baml
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\obj\Debug\userControls\AddDataLeftMenuUC.baml
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\obj\Debug\userControls\AddValuesUC.baml
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\obj\Debug\userControls\DataSectionsUC.baml
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\obj\Debug\userControls\RecentBuyingUC.baml
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\obj\Debug\userControls\TopMenu.baml
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\obj\Debug\userControls\WatchDataUC.baml
@@ -123,11 +131,5 @@ C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\Wp
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\obj\Debug\PL.csproj.CopyComplete
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\obj\Debug\PL.exe
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\obj\Debug\PL.pdb
-C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\LiveCharts.dll
-C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\LiveCharts.Wpf.dll
-C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\LiveCharts.pdb
-C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\LiveCharts.xml
-C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\LiveCharts.Wpf.pdb
-C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\LiveCharts.Wpf.xml
-C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\obj\Debug\userControls\DataSectionsUC.g.cs
-C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\obj\Debug\userControls\DataSectionsUC.baml
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\obj\Debug\userControls\AnalyzeBuyingUC.g.cs
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\obj\Debug\userControls\AnalyzeBuyingUC.baml
