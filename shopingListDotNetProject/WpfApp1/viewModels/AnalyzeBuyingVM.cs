@@ -37,15 +37,15 @@ namespace PL.viewModels
         private void Active_ShowButtonClickedEvent()
         {
 
-            string product1 = AnalyzeBuyingUC.productname.Text.ToString();
-            string product2 = AnalyzeBuyingUC.productname1.Text.ToString();
+            int product1 = (AnalyzeBuyingUC.productname.SelectedValue as Product).ProductId;
+            int product2 = (AnalyzeBuyingUC.productname1.SelectedValue as Product).ProductId;
 
             AnalyzeBuyingUC.probability.Text = Model.getProbability(product1, product2).ToString();
 
 
         }
 
-        public class probility
+        public struct probility
         {
             public probility(string product1, string product2, float probability)
             {
@@ -66,10 +66,10 @@ namespace PL.viewModels
             {
                 for (int j = i+1; j < products.Count; j++)
                 {
-                    string p1 = products[i].ProductName;
-                    string p2 = products[j].ProductName;
+                    int p1 = products[i].ProductId;
+                    int p2 = products[j].ProductId;
                     float probability = Model.getProbability(p1, p2);
-                    probilities.Add(new probility(p1, p2, probability));
+                    probilities.Add(new probility(products[i].ProductName, products[j].ProductName, probability));
                 }
             }
             return probilities;  

@@ -9,7 +9,7 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="10*"/>
             <ColumnDefinition Width="7*"/>
         </Grid.ColumnDefinitions>
         <DataGrid x:Name="probabiltyDataGrid" BorderThickness="1" BorderBrush="AliceBlue" Grid.Column="0" AutoGenerateColumns="False" ItemsSource="{Binding probilities}" HorizontalAlignment="Center" VerticalAlignment="Center" >
@@ -31,31 +31,39 @@
             </Grid.RowDefinitions>
 
 
-            <Label FontSize="20"  Content=":בחר מוצרים להשוואה" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="30" Grid.ColumnSpan="2"/>
+            <Label FontSize="15"  Content=":בחר מוצרים להשוואה" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,40,0" VerticalAlignment="Top" Height="30" Grid.ColumnSpan="2"/>
 
             <Grid Grid.Row="2">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <TextBox x:Name="productname1" HorizontalAlignment="Center" Height="23"  TextWrapping="Wrap"   VerticalAlignment="Top" Width="120" Grid.Row="1"/>
-                <Label Content="מוצר ב" HorizontalAlignment="Center" Height="35"  VerticalAlignment="Top" Width="48" Grid.Row="0"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <ComboBox x:Name="productname1" HorizontalAlignment="Center" Height="23" ItemsSource="{Binding productlist}" DisplayMemberPath="ProductName" VerticalAlignment="Center" Width="90" Grid.Column="1"/>
+                <Label Content="מוצר ב" HorizontalAlignment="Center" Height="35"  VerticalAlignment="Center" Width="48" Grid.Column="2"/>
             </Grid>
 
             <Grid Grid.Row="3">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Label Content="הסתברות" HorizontalAlignment="Center"  VerticalAlignment="Top"  Grid.Row="0"/>
-                <TextBox x:Name="probability" Text="{Binding count}" HorizontalAlignment="Center" Height="23" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="הסתברות" HorizontalAlignment="Center"  VerticalAlignment="Center"  Grid.Column="2"/>
+                <TextBox x:Name="probability" Text="{Binding count}" HorizontalAlignment="Center" Height="23" Grid.Column="1" TextWrapping="Wrap"  VerticalAlignment="Center" Width="90"/>
             </Grid>
 
-            <Button  Content="הצג" HorizontalAlignment="Center" Grid.Row="4"  VerticalAlignment="Top" Width="124" Height="58" Click="Show_Click" RenderTransformOrigin="0.53,-1.416" Grid.RowSpan="3"/>
+            <Button  Content="הצג" HorizontalAlignment="Center" Grid.Row="4"  VerticalAlignment="Top" Width="124" Height="40" Click="Show_Click"/>
 
             <Grid Grid.Row="1">
-                <Label Content="מוצר א" HorizontalAlignment="Center" Height="35"  VerticalAlignment="Top" Width="49" Grid.Row="0"/>
-                <TextBox x:Name="productname" HorizontalAlignment="Center" Height="23"  TextWrapping="Wrap"  Width="148" Grid.Row="1"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="מוצר א" HorizontalAlignment="Center" Height="35"  VerticalAlignment="Center" Width="49" Grid.Column="2"/>
+                <ComboBox x:Name="productname" HorizontalAlignment="Center" Height="23" VerticalAlignment="Center" ItemsSource="{Binding productlist}" DisplayMemberPath="ProductName"  Width="90" Grid.Column="1"/>
+             
             </Grid>
         </Grid>
     </Grid>

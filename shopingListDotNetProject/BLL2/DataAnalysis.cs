@@ -11,18 +11,21 @@ namespace BLL2
     public class DataAnalysis
     {
         DbAdapter dbAdapter;
-        public float getProbability(string product1Name, string product2Name)
+        public float getProbability(int Id1, int Id2)
         {
+            //אם מדובר באותו מוצר ההסתברות היא 1
+            if (Id1 == Id2) return 1;
+
             dbAdapter = new DbAdapter();
             List<Buying> buyings = dbAdapter.GetAllBuyings();
             List<Product> productlist = dbAdapter.GetAllProducts();
             float count = 0;
             int check = 0;
-            string Id = null;
-            string Id1 = null;
+            //string Id = null;
+            //string Id1 = null;
             int j = productlist.Count;
            
-            for (int i = 0; i < j; i++)
+           /* for (int i = 0; i < j; i++)
             {
                 if (productlist[i].ProductName.ToString() == product1Name)
                 {
@@ -32,12 +35,12 @@ namespace BLL2
                 {
                     Id1 = productlist[i].ProductId.ToString();
                 }
-            }
+            }*/
 
             List<DateTime> datetime = new List<DateTime>();
 
 
-            buyings = buyings.Where(x => x.ProductId.ToString() == Id || x.ProductId.ToString() == Id1).ToList();
+            buyings = buyings.Where(x => x.ProductId == Id1 || x.ProductId == Id2).ToList();
             for (int i = 0; i < buyings.Count; i++)
             {
                 if (!(datetime.Contains(buyings[i].Date)))
@@ -56,7 +59,7 @@ namespace BLL2
             for (int i = 0; i < buyings.Count; i++)
             {
                 
-                if (buyings[i].ProductId.ToString() == Id && check == 0)
+                if (buyings[i].ProductId == Id1 && check == 0)
                 {   
                     A = buyings[i];
                     buyings[i].ProductId = -1;
@@ -66,7 +69,7 @@ namespace BLL2
                     //Product B must be no earlier than one before A, since the products are arranged by date, and A is the first A on the date.
                     for (k=Math.Max(i-1,0); k<buyings.Count; k++)
                     {
-                        if(buyings[k].ProductId.ToString() == Id1)
+                        if(buyings[k].ProductId == Id2)
                         {
                             B = buyings[k];
                             if (A.Date == B.Date)
@@ -100,7 +103,7 @@ namespace BLL2
                         }
                     }              
                 }
-                if (buyings[i].ProductId.ToString() == Id1)
+                if (buyings[i].ProductId == Id2)
                 {
                     B = buyings[i];
                 }

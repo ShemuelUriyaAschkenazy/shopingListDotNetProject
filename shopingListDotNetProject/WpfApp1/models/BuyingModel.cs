@@ -27,9 +27,9 @@ namespace PL.models
             return queries.getMonthlyProductPurchases(productId, year);
         }
 
-        public float getProbability(string product1,string product2)
+        public float getProbability(int productId1,int productId2)
         {
-            return dataAnalysis.getProbability(product1, product2);
+            return dataAnalysis.getProbability(productId1, productId2);
         }
 
         public double[] getDailyStorePurchases_PerOneProduct(int storeId, int year, int month)
