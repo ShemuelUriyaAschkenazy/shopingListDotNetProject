@@ -46,6 +46,10 @@ namespace BLL2
 
                 }
             }
+            //אם אחד המוצרים כלל לא מופיע אז ההסתברות 0
+            if (datetime.Count == 0)
+                return 0;
+
             Buying A = null;
             Buying B = null;
             
@@ -85,9 +89,11 @@ namespace BLL2
                         }
                         if (k == buyings.Count-1)//לא מצאנו התאמה והגענו לאיטרציה אחרונה
                         {
-                            //ברגע שסיימנו לעבור על מוצר, דואגים שנעבור ישר לתאריך הבא
+                            if (i + 1 < buyings.Count)//ברגע שסיימנו לעבור על מוצר, דואגים שנעבור ישר לתאריך הבא
                             while (buyings[i + 1].Date == A.Date)
-                            { i++; }
+                            { i++;
+                                if (i + 1 == buyings.Count) break;
+                            }
                             A = null;
                             B = null;
                             check = 0;
@@ -109,7 +115,7 @@ namespace BLL2
                     }
                 }
             }
-            float probability = count / datetime.Count();
+            float probability = count / datetime.Count;
             return probability;
         }
     }
