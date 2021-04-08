@@ -85,7 +85,7 @@ namespace DAL
         {
             using (var ctx = new ShopingContext())
             {
-                return (from b in ctx.Buyings select b).ToList<Buying>();
+                return (from b in ctx.Buyings select b).OrderByDescending(x => x.Date).ToList<Buying>();
             }
         }
 

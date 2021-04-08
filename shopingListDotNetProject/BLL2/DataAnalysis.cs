@@ -37,6 +37,7 @@ namespace BLL2
             List<DateTime> datetime = new List<DateTime>();
 
 
+            buyings = buyings.Where(x => x.ProductId.ToString() == Id || x.ProductId.ToString() == Id1).ToList();
             for (int i = 0; i < buyings.Count; i++)
             {
                 if (!(datetime.Contains(buyings[i].Date)))
@@ -47,14 +48,51 @@ namespace BLL2
             }
             Buying A = null;
             Buying B = null;
-            Buying C = null;
+            
             for (int i = 0; i < buyings.Count; i++)
             {
+                
                 if (buyings[i].ProductId.ToString() == Id && check == 0)
-                {
+                {   
                     A = buyings[i];
                     buyings[i].ProductId = -1;
                     check = 1;
+
+                    int k = 0;
+                    //Product B must be no earlier than one before A, since the products are arranged by date, and A is the first A on the date.
+                    for (k=Math.Max(i-1,0); k<buyings.Count; k++)
+                    {
+                        if(buyings[k].ProductId.ToString() == Id1)
+                        {
+                            B = buyings[k];
+                            if (A.Date == B.Date)
+                            {
+                                count += 1;
+                                //ברגע שסיימנו לעבור על מוצר, דואגים שנעבור ישר לתאריך הבא
+                                if ((i + 1) < buyings.Count)
+                                {
+                                    while (buyings[i + 1].Date == A.Date)
+                                    { i++;
+                                        if (i + 1 == buyings.Count) break;
+                                    }
+                                }
+                                A = null;
+                                B = null;
+                                check = 0;
+                                break; 
+                            }
+
+                        }
+                        if (k == buyings.Count-1)//לא מצאנו התאמה והגענו לאיטרציה אחרונה
+                        {
+                            //ברגע שסיימנו לעבור על מוצר, דואגים שנעבור ישר לתאריך הבא
+                            while (buyings[i + 1].Date == A.Date)
+                            { i++; }
+                            A = null;
+                            B = null;
+                            check = 0;
+                        }
+                    }              
                 }
                 if (buyings[i].ProductId.ToString() == Id1)
                 {
@@ -65,17 +103,14 @@ namespace BLL2
                     if (A.Date == B.Date)
                     {
                         count += 1;
+                        check = 0;
+                        A = null;
+                        B = null;
                     }
-
                 }
-
             }
             float probability = count / datetime.Count();
             return probability;
-            //AnalyzeBuyingUC.probability.Text = probability.ToString();
-
-
         }
-
     }
 }
