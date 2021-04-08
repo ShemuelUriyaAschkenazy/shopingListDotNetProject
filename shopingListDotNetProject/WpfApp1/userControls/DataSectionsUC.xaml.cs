@@ -12,6 +12,8 @@ namespace PL.userControls
     public partial class DataSectionsUC : UserControl
     {
         public event Action scalingChangedEvent;
+        public event Action dataTypeChangedEvent;
+
         public DataSectionsUC()
         {
             InitializeComponent();
@@ -40,5 +42,11 @@ namespace PL.userControls
         {
             if (scalingChangedEvent != null) scalingChangedEvent();
          }
+
+        private void DataTypeSelection_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (dataTypeChangedEvent != null)
+                dataTypeChangedEvent();
+        }
     }
 }

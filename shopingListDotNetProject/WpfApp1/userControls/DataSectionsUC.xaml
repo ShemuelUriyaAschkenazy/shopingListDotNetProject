@@ -14,8 +14,8 @@
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
         <lvc:CartesianChart Name="chart" Series="{Binding SeriesCollection}" LegendLocation="Right" Grid.ColumnSpan="6" Grid.Row="1" >
-            <lvc:CartesianChart.AxisY>
-                <lvc:Axis Title="Amount"></lvc:Axis>
+            <lvc:CartesianChart.AxisY >
+                <lvc:Axis Name="chartAxisY" Title="Amount"></lvc:Axis>
             </lvc:CartesianChart.AxisY>
             <lvc:CartesianChart.AxisX>
                 <lvc:Axis Name="chartAxisX" Title="Month" Labels="{Binding Labels}"></lvc:Axis>
@@ -36,11 +36,11 @@
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
             <TextBlock HorizontalAlignment="Center"  TextWrapping="Wrap" Text="Data Type:" VerticalAlignment="Center"/>
-            <ComboBox HorizontalAlignment="Left" Height="23"   Text="TextBox" VerticalAlignment="Center" Width="70" Grid.Column="1">
-                <ComboBoxItem IsSelected="True">product</ComboBoxItem>
-                <ComboBoxItem>store</ComboBoxItem>
-                <ComboBoxItem>category</ComboBoxItem>
-                <ComboBoxItem>total cost</ComboBoxItem>
+            <ComboBox Name="DataTypeSelection" HorizontalAlignment="Left" Height="23"   Text="TextBox" VerticalAlignment="Center" Width="70" Grid.Column="1" SelectionChanged="DataTypeSelection_SelectionChanged" >
+                <ComboBoxItem Name="Product" IsSelected="True">product</ComboBoxItem>
+                <ComboBoxItem Name="Store">store</ComboBoxItem>
+                <ComboBoxItem Name="Category">category</ComboBoxItem>
+                <ComboBoxItem Name="TotalCost">total cost</ComboBoxItem>
             </ComboBox>
             <TextBlock HorizontalAlignment="Center"  TextWrapping="Wrap" Text="Parameter:" VerticalAlignment="Center" Grid.Column="2"/>
             <ComboBox Name="parameterCB" ItemsSource="{Binding productlist}" DisplayMemberPath="ProductName" HorizontalAlignment="Left" Height="23"   Text="TextBox" VerticalAlignment="Center" Width="120" Grid.Column="3"/>
