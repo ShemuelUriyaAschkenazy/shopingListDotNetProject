@@ -84,6 +84,12 @@ namespace BLL
             }
             if (BuyingListChangedEvent != null) BuyingListChangedEvent();
         }
+
+        public void Update (Product obj)
+        {
+            dbAdapter.UpdateProduct(obj);
+            if (ProductListChangedEvent != null) ProductListChangedEvent();
+        }
         public List<Buying> GetAllBuyings()
         {
             return dbAdapter.GetAllBuyings();

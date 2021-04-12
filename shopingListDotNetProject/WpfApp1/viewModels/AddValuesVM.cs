@@ -9,6 +9,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PL.viewModels
 {
@@ -17,12 +18,14 @@ namespace PL.viewModels
         
         MainWindow Main;
         AddValuesUC AddValuesUC;
+        string chosenFile = "";
 
         public AddCategoryAction AddCategoryAction { get; set; }
         public AddProductAction AddProductAction { get; set; }
         public AddStoreAction AddStoreAction { get; set; }
         public AddUserAction AddUserAction { get; set; }
         public AddBuyingAction AddBuyingAction { get; set; }
+        public AddPictureAction AddPictureAction { get; set; }
         public AddValuesVM(MainWindow main)
         {
             Main = main;
@@ -56,35 +59,69 @@ namespace PL.viewModels
             AddBuyingAction = new AddBuyingAction();
             AddBuyingAction.AddBuyingClicked += AddBuyingAction_AddBuyingClicked;
 
-          
+            AddPictureAction = new AddPictureAction();
+            AddPictureAction.AddPictureClicked += AddPictureAction_AddPictureClicked;
+
+            AddValuesUC.choosePicture += AddValuesUC_choosePicture;
         }
-        
+
+        private void AddPictureAction_AddPictureClicked(Product obj)
+        {
+            obj.ImagePath = chosenFile;
+            Model.Update(obj);
+        }
+
+        private void AddValuesUC_choosePicture()
+        {
+            
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Multiselect = true;
+            openFileDialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF";
+            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                chosenFile= openFileDialog.FileName;
+                AddValuesUC.PicturePathTB.Text = chosenFile;
+            }
+        }
+
         //on pressing on "הוסף לקטלוג"
         private void AddProductAction_AddProductClicked(Product obj)
         {
             Model.Add(obj);
+            AddValuesUC.ProductNameTB.Text = "";
+            AddValuesUC.CategoryCB.SelectedValue = null;
         }
 
         //on pressing on "הוסף קטגוריה"
         private void AddAction_AddCategoryClicked(Category obj)
         {
             Model.Add(obj);
+            AddValuesUC.CategoryNameTB.Text = "";
         }
 
         //on pressing on "הוסף מוצר"
         private void AddBuyingAction_AddBuyingClicked(Buying obj)
         {
             Model.Add(obj);
+            AddValuesUC.PriceTB.Text = "";
+            AddValuesUC.AmountTB.Text = "";
+            AddValuesUC.ProductCB.SelectedValue = null;
+            AddValuesUC.StoreCB.SelectedValue = null;
+            AddValuesUC.UserCB.SelectedValue = null;
+            AddValuesUC.BuyingDateDatePicker.SelectedDate = null;
         }
 
         private void AddStoreAction_AddStoreClicked(Store obj)
         {
             Model.Add(obj);
+            AddValuesUC.StoreNameTB.Text = "";
         }
 
         private void AddUserAction_AddUserClicked(User obj)
         {
             Model.Add(obj);
+            AddValuesUC.UserNameTB.Text = "";
         }
 
         private void Model_UserListChangedEvent()
@@ -131,8 +168,5 @@ namespace PL.viewModels
                 categorylist.Add(obj);
             }
         }
-
-
-
     }
 }

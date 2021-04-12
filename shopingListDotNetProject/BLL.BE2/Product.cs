@@ -22,10 +22,16 @@ namespace BE
             CategotyId = categotyId;
         }
 
+        public Product(int productId, string productName, int categotyId, string imagePath) : this(productId, productName, categotyId)
+        {
+            ImagePath = imagePath;
+        }
+
         public int Id { get; set; }
         public int ProductId { get; set; }
         public string ProductName { get; set; }
         public int CategotyId { get; set; }
+        public string ImagePath { get; set; }
 
         public override bool Equals(object obj)
         {

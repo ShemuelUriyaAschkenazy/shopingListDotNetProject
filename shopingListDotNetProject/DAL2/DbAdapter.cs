@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 
@@ -71,6 +72,15 @@ namespace DAL
                 ctx.Products.Add(obj);
                 ctx.SaveChanges();
                 return (from p in ctx.Products where p.ProductId == obj.ProductId select p).FirstOrDefault();
+            }
+        }
+
+        public void UpdateProduct (Product obj)
+        {
+            using (var ctx = new ShopingContext())
+            {
+                ctx.Products.AddOrUpdate(obj);
+                ctx.SaveChanges();
             }
         }
 
@@ -159,7 +169,7 @@ namespace DAL
 
     public class ShopingContext : DbContext
     {
-        public ShopingContext():base("ShopingDB4")
+        public ShopingContext():base("ShopingDB5")
         {
             /*
             //https://stackoverflow.com/questions/32607736/the-entity-framework-provider-type-system-data-entity-sqlserver-sqlproviderserv/32617247

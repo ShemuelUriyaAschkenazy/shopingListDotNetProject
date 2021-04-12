@@ -33,14 +33,11 @@ namespace PL.commands
                     return true;
                 else return false;
             }
-
             public void Execute(object parameter)
             {
                 if (AddBuyingClicked != null && parameter is Buying)
                     AddBuyingClicked(parameter as Buying);
             }
         }
-
     }
-
 }

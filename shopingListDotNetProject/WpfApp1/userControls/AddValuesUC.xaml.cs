@@ -26,7 +26,7 @@ namespace PL.userControls
             InitializeComponent();
         }
 
-        
+        public event Action choosePicture;
         private void PreviewTextInput_Numbers(object sender, TextCompositionEventArgs e)
         {
             // from: https://stackoverflow.com/questions/1268552/how-do-i-get-a-textbox-to-only-accept-numeric-input-in-wpf
@@ -38,5 +38,14 @@ namespace PL.userControls
         {
             return _regex.IsMatch(text);
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            choosePicture?.Invoke();
+            
+            
+        }
+
+        
     }
 }

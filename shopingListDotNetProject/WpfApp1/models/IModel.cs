@@ -100,5 +100,10 @@ namespace PL.models
             BLAddingVal.Add(obj);
         }
 
+        public void Update(Product obj)
+        {
+            BLAddingVal.Update(obj);
+        }
+
     }
 }
