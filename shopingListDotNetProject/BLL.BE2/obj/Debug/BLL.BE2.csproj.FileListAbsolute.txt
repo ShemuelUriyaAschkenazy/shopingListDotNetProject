@@ -1,6 +1,6 @@
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\BLL.BE2\bin\Debug\BLL.BE2.dll
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\BLL.BE2\bin\Debug\BLL.BE2.pdb
-C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\BLL.BE2\obj\Debug\BLL.BE2.csprojAssemblyReference.cache
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\BLL.BE2\obj\Debug\BLL.BE2.csproj.CoreCompileInputs.cache
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\BLL.BE2\obj\Debug\BLL.BE2.dll
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\BLL.BE2\obj\Debug\BLL.BE2.pdb
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\BLL.BE2\obj\Debug\BLL.BE2.csprojAssemblyReference.cache

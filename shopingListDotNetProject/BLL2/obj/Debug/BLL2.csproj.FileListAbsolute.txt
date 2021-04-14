@@ -6,7 +6,6 @@ C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\BL
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\BLL2\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\BLL2\bin\Debug\Google.Apis.Auth.dll
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\BLL2\bin\Debug\Google.Apis.Drive.v3.dll
-C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\BLL2\bin\Debug\MessagingToolkit.QRCode.dll
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\BLL2\bin\Debug\Google.Apis.dll
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\BLL2\bin\Debug\Google.Apis.Core.dll
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\BLL2\bin\Debug\Newtonsoft.Json.dll
@@ -29,3 +28,6 @@ C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\BL
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\BLL2\obj\Debug\BLL2.csproj.CopyComplete
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\BLL2\obj\Debug\BLL2.dll
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\BLL2\obj\Debug\BLL2.pdb
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\BLL2\bin\Debug\QRCodeDecoderLibrary.dll
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\BLL2\bin\Debug\QRCodeDecoderLibrary.pdb
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\BLL2\bin\Debug\QRCodeDecoderLibrary.xml

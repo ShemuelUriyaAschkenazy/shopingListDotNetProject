@@ -1,14 +1,19 @@
 ﻿
+using BLL.BE2;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Download;
 using Google.Apis.Drive.v3;
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
 using MessagingToolkit.QRCode.Codec.Data;
+using QRCodeDecoderLibrary;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
+using System.Text;
 using System.Threading;
 
 namespace DAL
@@ -61,10 +66,16 @@ namespace DAL
             });
 
             // Define parameters of request.
+            DrivesResource.ListRequest listRequest1 = service.Drives.List();
+            IList<Google.Apis.Drive.v3.Data.Drive> drives = listRequest1.Execute()
+                .Drives;
             FilesResource.ListRequest listRequest = service.Files.List();
+
+
 
             listRequest.PageSize = 10;
             listRequest.Fields = "nextPageToken, files(id, name)";
+
 
             // List files.
 
@@ -74,6 +85,8 @@ namespace DAL
             if (files != null && files.Count > 0)
             {
                 FilesResource.GetRequest request;
+                
+
                 foreach (var file in files)
                 {
                     //Console.WriteLine("{0} ({1})", file.Name, file.Id);
@@ -114,12 +127,52 @@ namespace DAL
                     request.Download(stream1);
 
                     //TODO: to move this section to another class in order to go along with OCP/SRP 
-                    if (file.Name.StartsWith("qrcode"))
+
+                    try
                     {
-                        MessagingToolkit.QRCode.Codec.QRCodeDecoder decoder = new MessagingToolkit.QRCode.Codec.QRCodeDecoder();
-                        string text = decoder.Decode(new QRCodeBitmapImage((Bitmap)Image.FromStream(stream1)));
-                        StringsFromQRCodes.Add(text);
+
+                        /*   MessagingToolkit.QRCode.Codec.QRCodeDecoder decoder = new MessagingToolkit.QRCode.Codec.QRCodeDecoder();
+                           string text = decoder.Decode(new QRCodeBitmapImage((Bitmap)Image.FromStream(stream1)));
+                        if (text != null)
+                            StringsFromQRCodes.Add(text);*/
+                            
+                        string name = file.Name;
+                        //DateTime date = new DateTime();
+                        int _day=1, _month=1, _year=1;
+                        string[] dateArray = name.Split(',' ,' ');
+                        if (dateArray[0] != null)
+                        {
+                            _month = dateArray[0].MonthToInt();
+                            if (_month == -1) _month = 1;
+                        }
+                        if (dateArray[1] != null)
+                        {
+                            int.TryParse(dateArray[1], out _day);
+                        }
+                        if (dateArray[3] != null)
+                        {
+                            int.TryParse(dateArray[3], out _year);
+                        }
+                        
+
+
+                        QRDecoder Decoder = new QRDecoder();
+                        
+                        byte[][] DataByteArray = Decoder.ImageDecoder((Bitmap)Image.FromStream(stream1));
+                        string qrstring="";
+
+                        if (DataByteArray != null)
+                        {
+                            qrstring =(QRDecoder.ByteArrayToStr(DataByteArray[0]))+","+
+                                new DateTime(_year, _month, _day).ToString();
+                        }
+                            StringsFromQRCodes.Add(qrstring);
                     }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("cannot decode this file");
+                    }
+
                 }
             }
             else

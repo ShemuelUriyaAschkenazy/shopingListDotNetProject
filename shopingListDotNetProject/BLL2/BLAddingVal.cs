@@ -102,7 +102,7 @@ namespace BLL
             foreach (string s in list)
             {
                 var buyingString= s.Split(',');
-                RecentBuying.Add(new Buying(int.Parse(buyingString[0]), int.Parse(buyingString[1]), int.Parse(buyingString[2]), double.Parse(buyingString[3])));
+                RecentBuying.Add(new Buying(int.Parse(buyingString[1]), int.Parse(buyingString[0]), double.Parse(buyingString[3]), int.Parse(buyingString[2]),1, DateTime.Parse(buyingString[4])));
             }
 
 

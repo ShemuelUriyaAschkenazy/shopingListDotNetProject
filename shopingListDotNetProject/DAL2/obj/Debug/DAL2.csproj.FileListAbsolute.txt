@@ -12,6 +12,7 @@ C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\DA
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\DAL2\bin\Debug\Google.Apis.PlatformServices.dll
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\DAL2\bin\Debug\MessagingToolkit.QRCode.dll
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\DAL2\bin\Debug\Newtonsoft.Json.dll
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\DAL2\bin\Debug\QRCodeDecoderLibrary.dll
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\DAL2\bin\Debug\System.Drawing.Common.dll
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\DAL2\bin\Debug\BLL.BE2.pdb
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\DAL2\bin\Debug\EntityFramework.xml
@@ -25,6 +26,8 @@ C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\DA
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\DAL2\bin\Debug\Google.Apis.Drive.v3.pdb
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\DAL2\bin\Debug\Google.Apis.Drive.v3.xml
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\DAL2\bin\Debug\Newtonsoft.Json.xml
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\DAL2\bin\Debug\QRCodeDecoderLibrary.pdb
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\DAL2\bin\Debug\QRCodeDecoderLibrary.xml
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\DAL2\obj\Debug\DAL2.csprojAssemblyReference.cache
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\DAL2\obj\Debug\DAL2.csproj.CoreCompileInputs.cache
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\DAL2\obj\Debug\DAL2.csproj.CopyComplete
