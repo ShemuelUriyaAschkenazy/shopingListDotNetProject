@@ -40,5 +40,10 @@ namespace BE
                    ProductName == product.ProductName &&
                    CategotyId == product.CategotyId;
         }
+
+        public override string ToString()
+        {
+            return ProductName;
+        }
     }
 }

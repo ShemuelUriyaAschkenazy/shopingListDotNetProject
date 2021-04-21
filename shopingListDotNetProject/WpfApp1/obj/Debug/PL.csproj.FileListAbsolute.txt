@@ -135,3 +135,15 @@ C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\Wp
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\QRCodeDecoderLibrary.dll
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\QRCodeDecoderLibrary.pdb
 C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\QRCodeDecoderLibrary.xml
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\obj\Debug\userControls\RecommendationUC.g.cs
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\obj\Debug\userControls\RecommendationUC.baml
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\PdfSharp.Charting.dll
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\PdfSharp.dll
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\PdfSharp.xml
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\PdfSharp.Charting.xml
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\de\PdfSharp.resources.dll
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\de\PdfSharp.Charting.resources.dll
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\Syroot.KnownFolders.dll
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\Syroot.KnownFolders.xml
+C:\Users\uriya\source\repos\shopingListDotNetProject\shopingListDotNetProject\WpfApp1\bin\Debug\System.Security.Principal.Windows.xml

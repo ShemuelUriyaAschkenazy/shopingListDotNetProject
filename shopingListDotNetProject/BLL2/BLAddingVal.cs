@@ -69,7 +69,7 @@ namespace BLL
         {
             obj.BuyingId = dbAdapter.GetMaxBuyingId() + 1;
             dbAdapter.Add(obj);
-            if (BuyingListChangedEvent != null) BuyingListChangedEvent();
+            BuyingListChangedEvent?.Invoke();
 
         }
 
@@ -103,12 +103,8 @@ namespace BLL
             {
                 var buyingString= s.Split(',');
                 RecentBuying.Add(new Buying(int.Parse(buyingString[1]), int.Parse(buyingString[0]), double.Parse(buyingString[3]), int.Parse(buyingString[2]),1, DateTime.Parse(buyingString[4])));
-            }
-
-
-            
+        }
             return RecentBuying;
-
         }
 
         public List<Store> GetAllStores()

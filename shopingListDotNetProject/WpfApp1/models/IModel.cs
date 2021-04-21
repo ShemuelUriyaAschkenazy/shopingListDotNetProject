@@ -11,7 +11,6 @@ namespace PL.models
     public abstract class IModel
     {
         public BLAddingVal BLAddingVal;
-
         public List<Buying> buyings { get; set; }
         public List<User> userlist { get; set; }
         public List<Store> storelist { get; set; }

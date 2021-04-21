@@ -11,12 +11,17 @@ namespace BLL2
     public class DataAnalysis
     {
         DbAdapter dbAdapter;
+
+        public DataAnalysis()
+        {
+            this.dbAdapter = new DbAdapter();
+        }
+
         public float getProbability(int Id1, int Id2)
         {
             //אם מדובר באותו מוצר ההסתברות היא 1
             if (Id1 == Id2) return 1;
 
-            dbAdapter = new DbAdapter();
             List<Buying> buyings = dbAdapter.GetAllBuyings();
             List<Product> productlist = dbAdapter.GetAllProducts();
             float count = 0;
@@ -120,6 +125,43 @@ namespace BLL2
             }
             float probability = count / datetime.Count;
             return probability;
+        }
+
+        public HashSet<int> getRecommendationList(DayOfWeek dayOfWeek)
+        {
+            List<Buying> buyings = dbAdapter.GetAllBuyings();
+            List<Product> productlist = dbAdapter.GetAllProducts();
+            HashSet<int> productsIds = new HashSet<int>();
+            HashSet<int> ProbabilityProductsIds = new HashSet<int>();
+            int j = buyings.Count();
+            int k = productlist.Count();
+            for (int i = 0; i < j; i++)
+            {
+                //go through all buyings, and add any product that was bought in the selected day in week.
+                if (buyings[i].Date.DayOfWeek == dayOfWeek)
+                {
+                    productsIds.Add(buyings[i].ProductId);
+                }
+            }
+
+
+            //go through productsIds that we found above, and find products that are highly likely to buy them along with them.
+            //we add the new findings to a set called ProbabilityProductsIds  
+            foreach (int productId in productsIds)
+            {
+
+                for (int a = 0; a < productlist.Count(); a++)
+                {
+                    if (getProbability(productId, productlist[a].ProductId) >= 0.6)
+                    {
+                        ProbabilityProductsIds.Add(productlist[a].ProductId);
+                    }
+                }
+            }
+
+            //Union the two sets we found, and convert the ids set to a product list.
+            HashSet<int> UnionProductSet = ProbabilityProductsIds.Union<int>(productsIds).ToHashSet();
+            return UnionProductSet;
         }
     }
 }

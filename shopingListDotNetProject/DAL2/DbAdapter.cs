@@ -16,42 +16,34 @@ namespace DAL
             {
                 ctx.Categories.Add(catgory);
                 ctx.SaveChanges();
-                var query = from ct in ctx.Categories
-                            where ct.CategoryName == "food"
-                            select ct;
-
-                var categoty = query.FirstOrDefault<Category>();
+                
             }
         }
 
-        public Category Add(Category obj)
+        public void Add(Category obj)
         {
             using(var ctx = new ShopingContext())
             {
                 ctx.Categories.Add(obj);
                 ctx.SaveChanges();
-                return (from c in ctx.Categories where c.CategoryId == obj.CategoryId select c).FirstOrDefault();
-
             }
         }
 
-        public Store Add(Store obj)
+        public void Add(Store obj)
         {
             using (var ctx = new ShopingContext())
             {
                 ctx.Stores.Add(obj);
                 ctx.SaveChanges();
-                return (from s in ctx.Stores where s.StoreId == obj.StoreId select s).FirstOrDefault();
             }
         }
 
-        public User Add(User obj)
+        public void Add(User obj)
         {
             using (var ctx = new ShopingContext())
             {
                 ctx.Users.Add(obj);
                 ctx.SaveChanges();
-                return (from u in ctx.Users where u.UserId == obj.UserId select u).FirstOrDefault();
             }
         }
 

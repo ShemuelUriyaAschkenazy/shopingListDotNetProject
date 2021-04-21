@@ -70,10 +70,22 @@
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PdfSharp, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="Syroot.KnownFolders, Version=1.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syroot.Windows.IO.KnownFolders.1.2.3\lib\netstandard2.0\Syroot.KnownFolders.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.7.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -107,6 +119,7 @@
     <Compile Include="converters\ValuesToBuyingConverter.cs" />
     <Compile Include="converters\ValuesToProductConverter.cs" />
     <Compile Include="ExtensionMethod.cs" />
+    <Compile Include="ListToPdfCreator.cs" />
     <Compile Include="models\BuyingModel.cs" />
     <Compile Include="models\IModel.cs" />
     <Compile Include="models\RecentBuyingModel.cs" />
@@ -126,6 +139,9 @@
     <Compile Include="userControls\RecentBuyingUC.xaml.cs">
       <DependentUpon>RecentBuyingUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="userControls\RecommendationUC.xaml.cs">
+      <DependentUpon>RecommendationUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="userControls\TopMenu.xaml.cs">
       <DependentUpon>TopMenu.xaml</DependentUpon>
     </Compile>
@@ -141,6 +157,7 @@
     <Compile Include="viewModels\GeneralVM.cs" />
     <Compile Include="viewModels\IVM.cs" />
     <Compile Include="viewModels\RecentBuyingVM.cs" />
+    <Compile Include="viewModels\RecommendationVM.cs" />
     <Compile Include="viewModels\WatchDataVM.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -171,6 +188,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="userControls\RecentBuyingUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="userControls\RecommendationUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

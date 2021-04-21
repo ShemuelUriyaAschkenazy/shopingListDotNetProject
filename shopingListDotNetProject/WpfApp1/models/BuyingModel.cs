@@ -32,6 +32,11 @@ namespace PL.models
             return dataAnalysis.getProbability(productId1, productId2);
         }
 
+        public HashSet<int> getRecommendationList(DayOfWeek dayOfWeek)
+        {
+            return dataAnalysis.getRecommendationList(dayOfWeek);
+        }
+
         public double[] getDailyStorePurchases_PerOneProduct(int storeId, int year, int month)
         {
             return queries.getDailyStorePurchases_PerOneProduct(storeId, year, month);

@@ -91,7 +91,11 @@ namespace PL.viewModels
 
         private void TopMenu_OpenRecommendationPanelClickedEvent()
         {
-           // throw new NotImplementedException();
+            RecommendationUC recommendationUC = new RecommendationUC();
+            Main.centerOfPageGrid.Children.Clear();
+            Main.centerOfPageGrid.Children.Add(recommendationUC);
+            Main.CurrentVM = new RecommendationVM(Main);
+            Main.DataContext = Main.CurrentVM;
         }
 
         private void AddDataMenu_ImportDataEvent()
