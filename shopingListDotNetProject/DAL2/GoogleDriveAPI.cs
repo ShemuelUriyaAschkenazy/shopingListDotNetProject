@@ -26,6 +26,7 @@ namespace DAL
         public string ApplicationName = "Drive API .NET Quickstart";
         UserCredential credential;
         public string FolderPath;
+        public event Action<int> progressChanged;
         public GoogleDriveAPI()
         {
             string workingDirectory = Environment.CurrentDirectory;
@@ -86,9 +87,10 @@ namespace DAL
             {
                 FilesResource.GetRequest request;
                 
-
-                foreach (var file in files)
+                
+                for (int i=0; i<files.Count; i++)
                 {
+                    var file = files[i];
                     //Console.WriteLine("{0} ({1})", file.Name, file.Id);
                     request = service.Files.Get(file.Id);
                     //string workingDirectory = Environment.CurrentDirectory;
@@ -172,6 +174,9 @@ namespace DAL
                     {
                         Console.WriteLine("cannot decode this file");
                     }
+
+                    //call the event i
+                    progressChanged?.Invoke((int)(100*((double)(i+1)/files.Count)));
 
                 }
             }

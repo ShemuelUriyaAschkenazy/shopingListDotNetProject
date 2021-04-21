@@ -27,7 +27,7 @@ namespace PL.userControls
 
         private void AddData_Click(object sender, RoutedEventArgs e)
         {
-
+           
         }
     }
 }

@@ -16,6 +16,7 @@ namespace BLL
         public event Action UserListChangedEvent;
         public event Action StoreListChangedEvent;
         public event Action ProductListChangedEvent;
+        public event Action<int> progressChanged;
 
 
         public BLAddingVal()
@@ -23,6 +24,12 @@ namespace BLL
             //var ensureDllIsCopied = new Google.Apis.Drive.v3.DriveService();
             dbAdapter = new DbAdapter();
             GoogleDriveAPI = new GoogleDriveAPI();
+            GoogleDriveAPI.progressChanged += GoogleDriveAPI_progressChanged;
+        }
+
+        private void GoogleDriveAPI_progressChanged(int obj)
+        {
+            progressChanged?.Invoke(obj);
         }
 
         public void Save(Category category)

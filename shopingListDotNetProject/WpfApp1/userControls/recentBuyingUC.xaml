@@ -37,7 +37,7 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="כאן ניתן לערוך את הנתונים ולשמור אותם" FontStyle="Oblique" VerticalAlignment="Center"/>
+        <TextBlock x:Name="topTB" HorizontalAlignment="Right" TextWrapping="Wrap" Text="כאן ניתן לערוך את הנתונים ולשמור אותם" FontStyle="Oblique" VerticalAlignment="Center"/>
 
     </Grid>
 </UserControl>

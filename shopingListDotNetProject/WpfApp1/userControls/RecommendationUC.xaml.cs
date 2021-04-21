@@ -20,29 +20,13 @@ namespace PL.userControls
     /// </summary>
     public partial class RecommendationUC : UserControl
     {
-        public event Action PDFButtonClickedEvent;
-        public event Action ListButtonClickedEvent;
         public RecommendationUC()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (PDFButtonClickedEvent != null)
-            {
-                PDFButtonClickedEvent();
-            }
+        
 
-        }
-
-        private void ListButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (ListButtonClickedEvent != null)
-            {
-                ListButtonClickedEvent();
-            }
-
-        }
+        
     }
 }

@@ -111,8 +111,10 @@
     <Compile Include="commands\AddProductAction.cs" />
     <Compile Include="commands\AddStoreAction.cs" />
     <Compile Include="commands\AddUserAction.cs" />
+    <Compile Include="commands\ExportToPdfAction.cs" />
     <Compile Include="commands\SaveAction.cs" />
     <Compile Include="commands\ViewGraphAction.cs" />
+    <Compile Include="commands\ViewRndListAction.cs" />
     <Compile Include="converters\StringToUserConverter.cs" />
     <Compile Include="converters\StringToStoreConverter.cs" />
     <Compile Include="converters\StringToCategoryConverter.cs" />
