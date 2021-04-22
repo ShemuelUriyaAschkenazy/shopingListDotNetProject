@@ -20,9 +20,21 @@ namespace PL.userControls
     /// </summary>
     public partial class WatchDataUC : UserControl
     {
+        public string ProductImagePath
+        {
+            get { return (string)GetValue(ProductImagePathProperty); }
+            set { SetValue(ProductImagePathProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ProductImagePath.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ProductImagePathProperty =
+            DependencyProperty.Register("ProductImagePath", typeof(string), typeof(WatchDataUC));
+
         public WatchDataUC()
         {
             InitializeComponent();
+            this.rightGrid.DataContext = this;
+
         }
 
         public event Action RowSelectionChanged;

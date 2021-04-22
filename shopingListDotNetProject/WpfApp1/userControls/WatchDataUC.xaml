@@ -32,13 +32,13 @@
 
 
         </DataGrid>
-        <Grid Grid.Column="1">
+        <Grid x:Name="rightGrid" Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="67*"/>
                 <RowDefinition Height="114*"/>
                 <RowDefinition Height="269*"/>
             </Grid.RowDefinitions>
-            <Image Grid.Row="1" Source="{Binding ProductImagePath, Mode=TwoWay}"/>
+            <Image Name="image" Grid.Row="1" Source="{Binding ProductImagePath, Mode=TwoWay}"/>
         </Grid>
     </Grid>
 </UserControl>
