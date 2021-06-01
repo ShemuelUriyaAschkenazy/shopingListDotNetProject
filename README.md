@@ -1,1 +1,1 @@
-# shopingListDotNetProject
+# shoppingListDotNetProject
